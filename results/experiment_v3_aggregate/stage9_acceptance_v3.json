@@ -1,0 +1,18 @@
+{
+  "overall_accepted": true,
+  "status": "formal_runs_validated_and_aggregated",
+  "protocol_sha256": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+  "validated_runs": 128,
+  "passed_runs": 128,
+  "failed_runs": 0,
+  "run_manifests": 128,
+  "result_json_files": 128,
+  "remaining_attempt_directories": 0,
+  "scheduler_completed": 128,
+  "scheduler_failed": 0,
+  "fold_seed_ensembles": 32,
+  "model_summaries": 8,
+  "primary_comparison_boundary": "Only the three primary_capacity_matched models support direct architecture attribution.",
+  "claim_boundary": "Metrics rank proximity to QFFD traces coded Inferred under a proxy label; they do not establish concealed-fault discovery.",
+  "next_gate": "Independently recompute aggregates before interpretation or release."
+}

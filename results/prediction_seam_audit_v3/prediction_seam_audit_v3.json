@@ -1,0 +1,10 @@
+{
+  "status": "diagnostic_only",
+  "protocol_sha256": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+  "definition": "mean absolute adjacent-pixel score jump on nominal 64-pixel stride lines divided by other lines",
+  "deep_mean_ratio": 3.113037267263986,
+  "deep_max_ratio": 5.6043492343709795,
+  "rf_direct_mean_ratio": 1.0288022553387757,
+  "rf_direct_max_ratio": 1.145449778804693,
+  "note": "This diagnostic identifies stride alignment but does not by itself establish the causal source of visible map structure."
+}

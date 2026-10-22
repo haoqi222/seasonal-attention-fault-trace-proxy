@@ -1,0 +1,149 @@
+{
+  "deep_models_common": {
+    "patch_pixels": 128,
+    "patches_per_epoch": 4096,
+    "batch_size": 16,
+    "optimizer": "Adam",
+    "initial_learning_rate": 0.0001,
+    "scheduler": "CosineAnnealingLR, T_max=30",
+    "maximum_epochs": 30,
+    "early_stopping": "patience 5 on validation-best F1",
+    "loss": "BCEWithLogitsLoss",
+    "positive_weight": 6.3435448,
+    "augmentation": "independent random horizontal and vertical flips",
+    "inference": "128-pixel window, 64-pixel stride, overlap averaging",
+    "test_time_augmentation": "horizontal-flip probability average",
+    "checkpoint_selection": "highest validation-best F1; test never used for selection",
+    "determinism": "torch/numpy/cuda seeded; deterministic algorithms requested; DataLoader workers=0"
+  },
+  "random_forest": {
+    "n_estimators": 200,
+    "training_pixels": 207740,
+    "background_to_positive_sampling_ratio": 3.0,
+    "features": "32 direct scientific channels + 7x7 mean/sd on ST, NIR, and NDVI in four seasons (56 total)",
+    "count_feature_included": false
+  },
+  "designs": {
+    "Random forest": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "parameter_count_M": null,
+      "tta": false,
+      "result_stems": [
+        "rf_seed0",
+        "rf_seed1",
+        "rf_seed2",
+        "rf_seed3"
+      ]
+    },
+    "U-Net (ResNet-18 encoder)": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "parameter_count_M": 14.419153,
+      "tta": true,
+      "result_stems": [
+        "unet_seed0",
+        "unet_seed1",
+        "unet_seed2",
+        "unet_seed3"
+      ]
+    },
+    "Temporal-attention, four seasons, all bands": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "parameter_count_M": 0.638401,
+      "tta": true,
+      "result_stems": [
+        "tcmt_attn_s4_all_seed0",
+        "tcmt_attn_s4_all_seed1",
+        "tcmt_attn_s4_all_seed2",
+        "tcmt_attn_s4_all_seed3"
+      ]
+    },
+    "Season concatenation, four seasons, all bands": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "parameter_count_M": 0.571921,
+      "tta": true,
+      "result_stems": [
+        "tcmt_concat_s4_all_seed0",
+        "tcmt_concat_s4_all_seed1",
+        "tcmt_concat_s4_all_seed2",
+        "tcmt_concat_s4_all_seed3"
+      ]
+    },
+    "Temporal-attention, summer only, all bands": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "parameter_count_M": 0.573121,
+      "tta": true,
+      "result_stems": [
+        "tcmt_attn_s1_all_seed0",
+        "tcmt_attn_s1_all_seed1",
+        "tcmt_attn_s1_all_seed2",
+        "tcmt_attn_s1_all_seed3"
+      ]
+    },
+    "Temporal-attention, four seasons, thermal only": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "parameter_count_M": 0.637393,
+      "tta": true,
+      "result_stems": [
+        "tcmt_attn_s4_thermal_seed0",
+        "tcmt_attn_s4_thermal_seed1",
+        "tcmt_attn_s4_thermal_seed2",
+        "tcmt_attn_s4_thermal_seed3"
+      ]
+    },
+    "Temporal-attention, four seasons, optical only": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "parameter_count_M": 0.638257,
+      "tta": true,
+      "result_stems": [
+        "tcmt_attn_s4_optical_seed0",
+        "tcmt_attn_s4_optical_seed1",
+        "tcmt_attn_s4_optical_seed2",
+        "tcmt_attn_s4_optical_seed3"
+      ]
+    }
+  },
+  "evaluation": {
+    "primary": "ROC AUC",
+    "secondary": [
+      "average precision",
+      "F1 at fixed threshold 0.5"
+    ],
+    "test_threshold_tuning": false,
+    "uncertainty_reporting": "four-seed dispersion; no pixelwise confidence interval"
+  }
+}

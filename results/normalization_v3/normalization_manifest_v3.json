@@ -1,0 +1,96 @@
+{
+  "schema_version": "fault-proxy-v3-normalization-manifest-1.0",
+  "status": "generated_pending_stage3_acceptance",
+  "feature_source": "01_data/interim/dataset_v2/X.npy",
+  "feature_sha256": "f13736ac44457daa39c541d29e15b0f48ccb8448f6b11981d749c6778e7e3f27",
+  "feature_shape": [
+    1840,
+    539,
+    32
+  ],
+  "feature_dtype": "float32",
+  "bands": [
+    "ST",
+    "red",
+    "nir08",
+    "swir16",
+    "ndvi",
+    "ndbi",
+    "ndwi",
+    "bsi"
+  ],
+  "seasons": [
+    "spring",
+    "summer",
+    "autumn",
+    "winter"
+  ],
+  "channel_names": [
+    "ST_spring",
+    "ST_summer",
+    "ST_autumn",
+    "ST_winter",
+    "red_spring",
+    "red_summer",
+    "red_autumn",
+    "red_winter",
+    "nir08_spring",
+    "nir08_summer",
+    "nir08_autumn",
+    "nir08_winter",
+    "swir16_spring",
+    "swir16_summer",
+    "swir16_autumn",
+    "swir16_winter",
+    "ndvi_spring",
+    "ndvi_summer",
+    "ndvi_autumn",
+    "ndvi_winter",
+    "ndbi_spring",
+    "ndbi_summer",
+    "ndbi_autumn",
+    "ndbi_winter",
+    "ndwi_spring",
+    "ndwi_summer",
+    "ndwi_autumn",
+    "ndwi_winter",
+    "bsi_spring",
+    "bsi_summer",
+    "bsi_autumn",
+    "bsi_winter"
+  ],
+  "folds": [
+    {
+      "fold_id": "F1_NorthTest",
+      "stats_path": "F1_NorthTest/norm_stats.json",
+      "stats_sha256": "b7e58a32b4f161121b195002789de30da431ce04ed2e3f0e130e3ff7aaeca5d2",
+      "sample_count": 249234,
+      "channels": 32,
+      "train_mask_sha256": "d0adac300e2db836b81e1ff7e747f4b316e7fcabdce0e8df60d781608dc6b10b"
+    },
+    {
+      "fold_id": "F2_NorthCentralTest",
+      "stats_path": "F2_NorthCentralTest/norm_stats.json",
+      "stats_sha256": "42f9b24a36cfc4424833e396938a8b12d2cd60c1b4d222451e90be6510e892a4",
+      "sample_count": 279288,
+      "channels": 32,
+      "train_mask_sha256": "7f38c70ede11608e09aa2d6f57ed177f0113eb618682ffecee994f4e9feffc67"
+    },
+    {
+      "fold_id": "F3_SouthCentralTest",
+      "stats_path": "F3_SouthCentralTest/norm_stats.json",
+      "stats_sha256": "e007ff235712b9bc77932db4e6b5fdb0e76b0b5482666f2042b88979704f26b2",
+      "sample_count": 386980,
+      "channels": 32,
+      "train_mask_sha256": "69b8ded6f5846a25ce23ccf7f08d73b5659df32398d2f280c2ea2fbd8975e138"
+    },
+    {
+      "fold_id": "F4_SouthTest",
+      "stats_path": "F4_SouthTest/norm_stats.json",
+      "stats_sha256": "863e85560715a65572c40464bc18fb904eb81cabbcc2e71bfa2fedecdbe0e752",
+      "sample_count": 249234,
+      "channels": 32,
+      "train_mask_sha256": "d0adac300e2db836b81e1ff7e747f4b316e7fcabdce0e8df60d781608dc6b10b"
+    }
+  ]
+}

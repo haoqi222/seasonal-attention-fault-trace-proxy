@@ -1,0 +1,162 @@
+{
+  "overall_accepted": true,
+  "status": "accepted_for_formal_run_orchestration",
+  "next_gate": "Create a resumable scheduler for the 128 locked cells, perform a preflight-only matrix audit, then request explicit authorization before launching formal training.",
+  "checks": [
+    {
+      "check": "formal_results_absent_before_smoke",
+      "passed": true
+    },
+    {
+      "check": "nine_smoke_cells_completed",
+      "passed": true,
+      "count": 9
+    },
+    {
+      "check": "all_smoke_cells_passed",
+      "passed": true
+    },
+    {
+      "check": "cpu_and_both_GPUs_exercised",
+      "passed": true
+    },
+    {
+      "check": "all_six_deep_designs_exercised_on_GPU_batch16",
+      "passed": true
+    },
+    {
+      "check": "both_RF_feature_designs_exercised",
+      "passed": true
+    },
+    {
+      "check": "all_roundtrips_equal",
+      "passed": true
+    },
+    {
+      "check": "all_smoke_cells_avoid_validation_and_test",
+      "passed": true
+    },
+    {
+      "check": "cpu_unet_matched_output_schema",
+      "passed": true
+    },
+    {
+      "check": "cpu_unet_matched_zero_role_sentinels",
+      "passed": true
+    },
+    {
+      "check": "cpu_unet_matched_smoke_metadata",
+      "passed": true
+    },
+    {
+      "check": "gpu0_unet_matched_output_schema",
+      "passed": true
+    },
+    {
+      "check": "gpu0_unet_matched_zero_role_sentinels",
+      "passed": true
+    },
+    {
+      "check": "gpu0_unet_matched_smoke_metadata",
+      "passed": true
+    },
+    {
+      "check": "gpu1_temporal_attn_output_schema",
+      "passed": true
+    },
+    {
+      "check": "gpu1_temporal_attn_zero_role_sentinels",
+      "passed": true
+    },
+    {
+      "check": "gpu1_temporal_attn_smoke_metadata",
+      "passed": true
+    },
+    {
+      "check": "gpu0_temporal_concat_output_schema",
+      "passed": true
+    },
+    {
+      "check": "gpu0_temporal_concat_zero_role_sentinels",
+      "passed": true
+    },
+    {
+      "check": "gpu0_temporal_concat_smoke_metadata",
+      "passed": true
+    },
+    {
+      "check": "gpu1_summer_only_output_schema",
+      "passed": true
+    },
+    {
+      "check": "gpu1_summer_only_zero_role_sentinels",
+      "passed": true
+    },
+    {
+      "check": "gpu1_summer_only_smoke_metadata",
+      "passed": true
+    },
+    {
+      "check": "gpu0_thermal_only_output_schema",
+      "passed": true
+    },
+    {
+      "check": "gpu0_thermal_only_zero_role_sentinels",
+      "passed": true
+    },
+    {
+      "check": "gpu0_thermal_only_smoke_metadata",
+      "passed": true
+    },
+    {
+      "check": "gpu1_optical_only_output_schema",
+      "passed": true
+    },
+    {
+      "check": "gpu1_optical_only_zero_role_sentinels",
+      "passed": true
+    },
+    {
+      "check": "gpu1_optical_only_smoke_metadata",
+      "passed": true
+    },
+    {
+      "check": "cpu_rf_direct_output_schema",
+      "passed": true
+    },
+    {
+      "check": "cpu_rf_direct_zero_role_sentinels",
+      "passed": true
+    },
+    {
+      "check": "cpu_rf_direct_smoke_metadata",
+      "passed": true
+    },
+    {
+      "check": "cpu_rf_context_output_schema",
+      "passed": true
+    },
+    {
+      "check": "cpu_rf_context_zero_role_sentinels",
+      "passed": true
+    },
+    {
+      "check": "cpu_rf_context_smoke_metadata",
+      "passed": true
+    },
+    {
+      "check": "all_smoke_sources_unchanged",
+      "passed": true
+    },
+    {
+      "check": "formal_results_absent_after_smoke",
+      "passed": true
+    },
+    {
+      "check": "protocol_hash_unchanged",
+      "passed": true,
+      "protocol_sha256": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569"
+    }
+  ],
+  "formal_training_started": false
+}

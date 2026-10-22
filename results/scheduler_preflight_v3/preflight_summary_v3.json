@@ -1,0 +1,21 @@
+{
+  "schema_version": "fault-proxy-v3-scheduler-plan-1.0",
+  "mode": "preflight_read_only",
+  "protocol_sha256": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+  "total_cells": 128,
+  "status_counts": {
+    "pending_new": 128,
+    "retry_failed": 0,
+    "skip_completed": 0,
+    "conflict": 0
+  },
+  "lane_counts": {
+    "cuda:0": 48,
+    "cuda:1": 48,
+    "cpu": 32
+  },
+  "actionable_cells": 128,
+  "safe_to_launch": true,
+  "state_fingerprint": "fdac4a915025883018f3099d76e9f27ffea4a6e8268accb5482e15efd9623f4c",
+  "formal_root_exists": false
+}

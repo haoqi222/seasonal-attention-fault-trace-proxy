@@ -1,0 +1,48 @@
+{
+  "source_files": {
+    "X": {
+      "path": "01_data/interim/dataset_v2/X.npy",
+      "sha256_before": "f13736ac44457daa39c541d29e15b0f48ccb8448f6b11981d749c6778e7e3f27",
+      "sha256_after": "f13736ac44457daa39c541d29e15b0f48ccb8448f6b11981d749c6778e7e3f27",
+      "unchanged": true,
+      "matches_stage1_frozen_hash": null
+    },
+    "y": {
+      "path": "01_data/interim/dataset_v2/y.npy",
+      "sha256_before": "099a63e6ced00623c424b390e86c01bc4bac70249c74aec656b0830ce65ee649",
+      "sha256_after": "099a63e6ced00623c424b390e86c01bc4bac70249c74aec656b0830ce65ee649",
+      "unchanged": true,
+      "matches_stage1_frozen_hash": true
+    },
+    "valid": {
+      "path": "01_data/interim/dataset_v2/valid.npy",
+      "sha256_before": "bb72c8e95ab6cf98d0bea5abddb9f097601973ad9325a7cfe724b9fab7ef679f",
+      "sha256_after": "bb72c8e95ab6cf98d0bea5abddb9f097601973ad9325a7cfe724b9fab7ef679f",
+      "unchanged": true,
+      "matches_stage1_frozen_hash": true
+    },
+    "vector": {
+      "path": "01_data/interim/nm_rifft_concealed.gpkg",
+      "sha256_before": "7863828578a21bb05ce88d062f23124c574018ae67f5ebae96eec545da05abe5",
+      "sha256_after": "7863828578a21bb05ce88d062f23124c574018ae67f5ebae96eec545da05abe5",
+      "unchanged": true,
+      "matches_stage1_frozen_hash": true
+    },
+    "reference": {
+      "path": "01_data/interim/label_inferred_fault_v2.tif",
+      "sha256_before": "9c09c6293dff103d5d3c501b24c77f72b7236aa00887377359de50b91684016c",
+      "sha256_after": "9c09c6293dff103d5d3c501b24c77f72b7236aa00887377359de50b91684016c",
+      "unchanged": true,
+      "matches_stage1_frozen_hash": true
+    },
+    "manifest": {
+      "path": "04_results/split_design_v3/fold_manifest_v3.json",
+      "sha256_before": "1f7d606ed16e327fb82f0da57d1664c09e1b9dd1092d4c6fa41e2bdb28e40d5e",
+      "sha256_after": "1f7d606ed16e327fb82f0da57d1664c09e1b9dd1092d4c6fa41e2bdb28e40d5e",
+      "unchanged": true,
+      "matches_stage1_frozen_hash": null
+    }
+  },
+  "all_sources_unchanged": true,
+  "all_stage1_frozen_inputs_match": true
+}

@@ -1,0 +1,58 @@
+{
+  "record_id": "fault-proxy-M7-NLCD-2021-100m-v1",
+  "status": "acquired_for_descriptive_audit",
+  "scientific_role": "external_confounded_covariate_audit_only",
+  "not_used_for": [
+    "model_retraining",
+    "checkpoint_selection",
+    "feature_ablation",
+    "geological_fault_probability_claim"
+  ],
+  "source": {
+    "service": "Esri Living Atlas USA Annual NLCD Land Cover ImageServer",
+    "owner_metadata": "esri_environment",
+    "service_url": "https://di-nlcd.img.arcgis.com/arcgis/rest/services/USA_NLCD_Annual_LandCover/ImageServer",
+    "year_filter": "Year = 2021",
+    "source_pixel_size_m": 30,
+    "resampling": "nearest neighbor",
+    "export_format": "GeoTIFF",
+    "export_crs": "EPSG:32613",
+    "export_bbox_m": [
+      305300,
+      3729900,
+      359200,
+      3913900
+    ],
+    "export_size_pixels": [
+      539,
+      1840
+    ],
+    "target_grid": "100 m grid, origin (305300,3913900), north-up"
+  },
+  "file": {
+    "relative_path": "01_data/external/nlcd_2021/nlcd_2021_100m_epsg32613.tif",
+    "sha256": "4ed4a60d9f25ba0dffcdeb0bba3941fa5f4f513ba3610a3e20114e48364a6434",
+    "shape": [
+      1840,
+      539
+    ],
+    "dtype": "uint8",
+    "class_values_observed": [
+      11,
+      21,
+      22,
+      23,
+      24,
+      31,
+      41,
+      42,
+      52,
+      71,
+      81,
+      82,
+      90,
+      95
+    ]
+  },
+  "provenance_boundary": "This is an official public ImageServer representation of annual NLCD 2021 values, not the 1.99 GB ScienceBase science-product archive. The archive download endpoint required authenticated/requester-pays access in this environment; the service export is retained with its exact query and checksum for audit traceability."
+}

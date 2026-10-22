@@ -1,0 +1,240 @@
+{
+  "overall_accepted": true,
+  "next_gate": "Generate fold-specific V3 label/mask rasters and verify their counts and hashes before normalization or model training.",
+  "checks": [
+    {
+      "fold": "F1_NorthTest",
+      "check": "allowed_fault_ids_disjoint",
+      "passed": true,
+      "value": true
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "train_gate",
+      "passed": true,
+      "value": {
+        "evaluation_pixels": 249234,
+        "positive_pixels": 18480,
+        "allowed_fault_ids": 14,
+        "test_label_matches_v2": null
+      },
+      "threshold": {
+        "min_eval_pixels": 200000,
+        "min_positive_pixels": 5000,
+        "min_fault_ids": 5
+      }
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "validation_gate",
+      "passed": true,
+      "value": {
+        "evaluation_pixels": 275591,
+        "positive_pixels": 7407,
+        "allowed_fault_ids": 7,
+        "test_label_matches_v2": null
+      },
+      "threshold": {
+        "min_eval_pixels": 100000,
+        "min_positive_pixels": 5000,
+        "min_fault_ids": 5
+      }
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "test_gate",
+      "passed": true,
+      "value": {
+        "evaluation_pixels": 161184,
+        "positive_pixels": 23629,
+        "allowed_fault_ids": 15,
+        "test_label_matches_v2": true
+      },
+      "threshold": {
+        "min_eval_pixels": 100000,
+        "min_positive_pixels": 5000,
+        "min_fault_ids": 5
+      }
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "allowed_fault_ids_disjoint",
+      "passed": true,
+      "value": true
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "train_gate",
+      "passed": true,
+      "value": {
+        "evaluation_pixels": 279288,
+        "positive_pixels": 20738,
+        "allowed_fault_ids": 21,
+        "test_label_matches_v2": null
+      },
+      "threshold": {
+        "min_eval_pixels": 200000,
+        "min_positive_pixels": 5000,
+        "min_fault_ids": 5
+      }
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "validation_gate",
+      "passed": true,
+      "value": {
+        "evaluation_pixels": 275591,
+        "positive_pixels": 7407,
+        "allowed_fault_ids": 7,
+        "test_label_matches_v2": null
+      },
+      "threshold": {
+        "min_eval_pixels": 100000,
+        "min_positive_pixels": 5000,
+        "min_fault_ids": 5
+      }
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "test_gate",
+      "passed": true,
+      "value": {
+        "evaluation_pixels": 125574,
+        "positive_pixels": 15815,
+        "allowed_fault_ids": 8,
+        "test_label_matches_v2": true
+      },
+      "threshold": {
+        "min_eval_pixels": 100000,
+        "min_positive_pixels": 5000,
+        "min_fault_ids": 5
+      }
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "allowed_fault_ids_disjoint",
+      "passed": true,
+      "value": true
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "train_gate",
+      "passed": true,
+      "value": {
+        "evaluation_pixels": 386980,
+        "positive_pixels": 9037,
+        "allowed_fault_ids": 8,
+        "test_label_matches_v2": null
+      },
+      "threshold": {
+        "min_eval_pixels": 200000,
+        "min_positive_pixels": 5000,
+        "min_fault_ids": 5
+      }
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "validation_gate",
+      "passed": true,
+      "value": {
+        "evaluation_pixels": 153580,
+        "positive_pixels": 16025,
+        "allowed_fault_ids": 14,
+        "test_label_matches_v2": null
+      },
+      "threshold": {
+        "min_eval_pixels": 100000,
+        "min_positive_pixels": 5000,
+        "min_fault_ids": 5
+      }
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "test_gate",
+      "passed": true,
+      "value": {
+        "evaluation_pixels": 134282,
+        "positive_pixels": 13287,
+        "allowed_fault_ids": 14,
+        "test_label_matches_v2": true
+      },
+      "threshold": {
+        "min_eval_pixels": 100000,
+        "min_positive_pixels": 5000,
+        "min_fault_ids": 5
+      }
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "allowed_fault_ids_disjoint",
+      "passed": true,
+      "value": true
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "train_gate",
+      "passed": true,
+      "value": {
+        "evaluation_pixels": 249234,
+        "positive_pixels": 18480,
+        "allowed_fault_ids": 14,
+        "test_label_matches_v2": null
+      },
+      "threshold": {
+        "min_eval_pixels": 200000,
+        "min_positive_pixels": 5000,
+        "min_fault_ids": 5
+      }
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "validation_gate",
+      "passed": true,
+      "value": {
+        "evaluation_pixels": 161184,
+        "positive_pixels": 23629,
+        "allowed_fault_ids": 15,
+        "test_label_matches_v2": null
+      },
+      "threshold": {
+        "min_eval_pixels": 100000,
+        "min_positive_pixels": 5000,
+        "min_fault_ids": 5
+      }
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "test_gate",
+      "passed": true,
+      "value": {
+        "evaluation_pixels": 275591,
+        "positive_pixels": 7407,
+        "allowed_fault_ids": 7,
+        "test_label_matches_v2": true
+      },
+      "threshold": {
+        "min_eval_pixels": 100000,
+        "min_positive_pixels": 5000,
+        "min_fault_ids": 5
+      }
+    },
+    {
+      "fold": "global",
+      "check": "all_rows_assigned_once",
+      "passed": true,
+      "value": true
+    },
+    {
+      "fold": "global",
+      "check": "all_buffers_are_50_rows",
+      "passed": true,
+      "value": 50
+    },
+    {
+      "fold": "global",
+      "check": "adjacent_cores_separated_by_50_rows",
+      "passed": true,
+      "value": 50
+    }
+  ]
+}

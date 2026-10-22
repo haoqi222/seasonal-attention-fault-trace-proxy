@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "scope": "evaluation-only; no retraining; no checkpoint selection",
+  "distance_control": "categorical indicators using Figure 6 distance bins",
+  "land_cover_control": "NLCD class indicators",
+  "folds": [
+    "F1_NorthTest",
+    "F2_NorthCentralTest",
+    "F3_SouthCentralTest",
+    "F4_SouthTest"
+  ],
+  "models": [
+    "unet_matched",
+    "temporal_attn",
+    "temporal_concat",
+    "rf_direct",
+    "rf_context",
+    "summer_only",
+    "thermal_only",
+    "optical_only"
+  ],
+  "input_m7_distance_raster": "01_data/interim/m7_covariates_v1/distance_rio_grande_m.tif",
+  "output": "04_results/m7_covariate_audit_v2_categorical_distance"
+}

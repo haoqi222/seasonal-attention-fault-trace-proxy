@@ -1,0 +1,26 @@
+{
+  "independent_verification_passed": true,
+  "checks": 3217,
+  "failed_checks": 0,
+  "failures": [],
+  "validated_runs": 128,
+  "recomputed_fold_seed_ensembles": 32,
+  "recomputed_models": 8,
+  "protocol_sha256": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+  "ordered_manifest_digest_sha256": "7d8a094fb7b13542c9977574597158cdcf9bef9859cd6513413d1ec8c346bf49",
+  "descriptive_rank": [
+    "temporal_attn",
+    "temporal_concat",
+    "unet_matched",
+    "summer_only",
+    "optical_only",
+    "rf_context",
+    "rf_direct",
+    "thermal_only"
+  ],
+  "primary_capacity_matched_rank": [
+    "temporal_attn",
+    "temporal_concat",
+    "unet_matched"
+  ]
+}

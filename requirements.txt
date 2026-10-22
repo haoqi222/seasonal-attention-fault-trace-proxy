@@ -1,0 +1,19 @@
+# Reference environment of the reported runs (workstation "ws5090", Ubuntu 22.04,
+# Python 3.12.3, 2 x NVIDIA GeForce RTX 5090). Captured with `pip list` in the
+# frozen project virtual environment; exact transitive pins were not frozen at
+# run time, so treat this file as a lower bound for reproduction.
+torch==2.11.0+cu128
+torchvision==0.26.0+cu128
+numpy==2.5.2
+pandas==3.0.5
+scipy==1.18.1
+scikit-learn==1.9.0
+torchmetrics==1.9.0
+rasterio==1.5.1
+geopandas==1.1.4
+shapely==2.1.2
+pyproj==3.7.2
+xarray==2026.7.0
+matplotlib==3.11.1
+pillow==12.3.0
+earthengine-api==1.7.41

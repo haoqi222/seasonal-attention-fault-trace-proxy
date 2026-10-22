@@ -1,0 +1,398 @@
+{
+  "overall_accepted": true,
+  "status": "accepted_for_training_protocol_freeze",
+  "next_gate": "Freeze the fair multi-model training protocol, seed schedule, stopping rule, and output schema before launching any training jobs.",
+  "checks": [
+    {
+      "fold": "global",
+      "check": "four_frozen_folds_available",
+      "passed": true,
+      "count": 4
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "loader_selected_requested_fold",
+      "passed": true
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "role_masks_match_partition_valid_label",
+      "passed": true
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "role_masks_pairwise_disjoint",
+      "passed": true
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "loaded_features_finite_and_invalid_zero",
+      "passed": true
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "training_channels_normalized_to_zero_mean",
+      "passed": true,
+      "max_abs_mean": 8.578248628234455e-06,
+      "tolerance": 5e-05
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "training_channels_normalized_to_unit_std",
+      "passed": true,
+      "max_abs_std_error": 4.885627258310876e-08,
+      "tolerance": 5e-05
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "complete_training_center_count_matches_geometry",
+      "passed": true,
+      "actual": 183752,
+      "expected": 183752
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "positive_and_background_center_pools_nonempty",
+      "passed": true,
+      "positive_centers": 7709,
+      "background_centers": 122815
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "representative_training_patches_fully_contained",
+      "passed": true
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "augmentation_flips_features_labels_and_loss_mask_together",
+      "passed": true
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "online_patch_sampling_is_seed_deterministic",
+      "passed": true
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "sampled_patch_tensor_shapes_are_valid",
+      "passed": true
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "sampled_loss_masks_exclude_ignore",
+      "passed": true
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "positive_weight_uses_only_eligible_training_labels",
+      "passed": true,
+      "pos_weight": 12.486688311688312
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "validation_windows_cover_only_complete_role",
+      "passed": true,
+      "windows": 72,
+      "min_coverage": 1,
+      "max_coverage": 9
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "test_windows_cover_only_complete_role",
+      "passed": true,
+      "windows": 48,
+      "min_coverage": 1,
+      "max_coverage": 9
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "loader_selected_requested_fold",
+      "passed": true
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "role_masks_match_partition_valid_label",
+      "passed": true
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "role_masks_pairwise_disjoint",
+      "passed": true
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "loaded_features_finite_and_invalid_zero",
+      "passed": true
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "training_channels_normalized_to_zero_mean",
+      "passed": true,
+      "max_abs_mean": 6.9427489616665765e-06,
+      "tolerance": 5e-05
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "training_channels_normalized_to_unit_std",
+      "passed": true,
+      "max_abs_std_error": 4.2130638977511126e-08,
+      "tolerance": 5e-05
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "complete_training_center_count_matches_geometry",
+      "passed": true,
+      "actual": 204352,
+      "expected": 204352
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "positive_and_background_center_pools_nonempty",
+      "passed": true,
+      "positive_centers": 12412,
+      "background_centers": 135322
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "representative_training_patches_fully_contained",
+      "passed": true
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "augmentation_flips_features_labels_and_loss_mask_together",
+      "passed": true
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "online_patch_sampling_is_seed_deterministic",
+      "passed": true
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "sampled_patch_tensor_shapes_are_valid",
+      "passed": true
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "sampled_loss_masks_exclude_ignore",
+      "passed": true
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "positive_weight_uses_only_eligible_training_labels",
+      "passed": true,
+      "pos_weight": 12.467451056032404
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "validation_windows_cover_only_complete_role",
+      "passed": true,
+      "windows": 72,
+      "min_coverage": 1,
+      "max_coverage": 9
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "test_windows_cover_only_complete_role",
+      "passed": true,
+      "windows": 40,
+      "min_coverage": 1,
+      "max_coverage": 9
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "loader_selected_requested_fold",
+      "passed": true
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "role_masks_match_partition_valid_label",
+      "passed": true
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "role_masks_pairwise_disjoint",
+      "passed": true
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "loaded_features_finite_and_invalid_zero",
+      "passed": true
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "training_channels_normalized_to_zero_mean",
+      "passed": true,
+      "max_abs_mean": 3.897352325033964e-06,
+      "tolerance": 5e-05
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "training_channels_normalized_to_unit_std",
+      "passed": true,
+      "max_abs_std_error": 4.7478140974277494e-08,
+      "tolerance": 5e-05
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "complete_training_center_count_matches_geometry",
+      "passed": true,
+      "actual": 282632,
+      "expected": 282632
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "positive_and_background_center_pools_nonempty",
+      "passed": true,
+      "positive_centers": 5210,
+      "background_centers": 225443
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "representative_training_patches_fully_contained",
+      "passed": true
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "augmentation_flips_features_labels_and_loss_mask_together",
+      "passed": true
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "online_patch_sampling_is_seed_deterministic",
+      "passed": true
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "sampled_patch_tensor_shapes_are_valid",
+      "passed": true
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "sampled_loss_masks_exclude_ignore",
+      "passed": true
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "positive_weight_uses_only_eligible_training_labels",
+      "passed": true,
+      "pos_weight": 41.82173287595441
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "validation_windows_cover_only_complete_role",
+      "passed": true,
+      "windows": 48,
+      "min_coverage": 1,
+      "max_coverage": 9
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "test_windows_cover_only_complete_role",
+      "passed": true,
+      "windows": 40,
+      "min_coverage": 1,
+      "max_coverage": 9
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "loader_selected_requested_fold",
+      "passed": true
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "role_masks_match_partition_valid_label",
+      "passed": true
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "role_masks_pairwise_disjoint",
+      "passed": true
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "loaded_features_finite_and_invalid_zero",
+      "passed": true
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "training_channels_normalized_to_zero_mean",
+      "passed": true,
+      "max_abs_mean": 8.578248628234455e-06,
+      "tolerance": 5e-05
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "training_channels_normalized_to_unit_std",
+      "passed": true,
+      "max_abs_std_error": 4.885627258310876e-08,
+      "tolerance": 5e-05
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "complete_training_center_count_matches_geometry",
+      "passed": true,
+      "actual": 183752,
+      "expected": 183752
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "positive_and_background_center_pools_nonempty",
+      "passed": true,
+      "positive_centers": 7709,
+      "background_centers": 122815
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "representative_training_patches_fully_contained",
+      "passed": true
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "augmentation_flips_features_labels_and_loss_mask_together",
+      "passed": true
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "online_patch_sampling_is_seed_deterministic",
+      "passed": true
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "sampled_patch_tensor_shapes_are_valid",
+      "passed": true
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "sampled_loss_masks_exclude_ignore",
+      "passed": true
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "positive_weight_uses_only_eligible_training_labels",
+      "passed": true,
+      "pos_weight": 12.486688311688312
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "validation_windows_cover_only_complete_role",
+      "passed": true,
+      "windows": 48,
+      "min_coverage": 1,
+      "max_coverage": 9
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "test_windows_cover_only_complete_role",
+      "passed": true,
+      "windows": 72,
+      "min_coverage": 1,
+      "max_coverage": 9
+    },
+    {
+      "fold": "global",
+      "check": "all_loader_sources_unchanged_during_stage4",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "status": "rejected",
+  "protocol_sha256": "dcd6db196aaaf8055fab75c3d083c4df8ddfa4f42e6924d6ba3c30a36e42812c",
+  "validation_only_cells": 24,
+  "test_probability_files": 0,
+  "checks_passed": 361,
+  "checks_total": 363,
+  "weighted_over_uniform_mean": 0.6154984419754911,
+  "weighted_over_uniform_maximum": 1.1026619964286084,
+  "acceptance_threshold": 0.75,
+  "failures": [
+    {
+      "name": "every_stride_ratio_not_above_uniform",
+      "passed": false,
+      "maximum": 1.1026619964286084
+    },
+    {
+      "name": "maximum_relative_stride_ratio_within_protocol",
+      "passed": false,
+      "maximum": 1.1026619964286084,
+      "threshold": 0.75
+    }
+  ]
+}

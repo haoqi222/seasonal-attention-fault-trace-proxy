@@ -1,0 +1,31 @@
+# Author names and affiliations are placeholders in this tagged release; the
+# maintainers replace them with the final author list before archiving.
+authors:
+  - name: "Firstname Lastname"
+    affiliation: "1"
+  - name: "Firstname Lastname"
+    affiliation: "1, 2"
+    corresponding: true
+  - name: "Firstname Lastname"
+    affiliation: "2"
+title: "Seasonal attention and spatial evaluation design for Landsat-based ranking of mapped fault-trace proxies: code, frozen protocols, aggregated results and public data"
+date-released: "2026-10-22"
+type: software
+version: "1.0.0"
+repository-code: "https://github.com/haoqi222/seasonal-attention-fault-trace-proxy"
+url: "https://github.com/haoqi222/seasonal-attention-fault-trace-proxy"
+keywords:
+  - geospatial machine learning
+  - spatial cross-validation
+  - data leakage
+  - seasonal attention
+  - Landsat
+  - fault trace proxy
+license: MIT
+abstract: >-
+  Code, frozen protocols, aggregated results and a public-data package for the
+  study of how evaluation design and spatial position determine apparent
+  performance when Landsat-based deep models rank pixels by proximity to mapped
+  fault traces. A matched random-pixel holdout yields average precision above
+  0.999 for every model, whereas four geographically blocked folds place all
+  models at or below the prevalence reference in the southernmost fold.

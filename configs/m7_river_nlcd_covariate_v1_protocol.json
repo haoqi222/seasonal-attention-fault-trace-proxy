@@ -1,0 +1,41 @@
+{
+  "schema_version": "fault-proxy-m7-river-nlcd-covariate-v1.0",
+  "status": "frozen_before_download",
+  "purpose": "Descriptive confounding audit for the F4 low-score corridor; no model retraining and no causal claim.",
+  "target_grid": {
+    "crs": "EPSG:32613",
+    "shape": [1840, 539],
+    "origin_upper_left_m": [305300.0, 3913900.0],
+    "pixel_size_m": [100.0, -100.0],
+    "lower_right_m": [359200.0, 3729900.0]
+  },
+  "river_covariate": {
+    "source": "USGS NHDPlus HR NetworkNHDFlowline layer 3",
+    "service": "https://hydro.nationalmap.gov/arcgis/rest/services/NHDPlus_HR/MapServer/3/query",
+    "query": "GNIS_NAME = 'Rio Grande'",
+    "spatial_filter": "research-grid envelope in EPSG:32613",
+    "geometry_output": "GeoJSON, EPSG:32613",
+    "distance_definition": "Euclidean distance in metres from each 100 m grid-cell centre to the union of returned Rio Grande flowline geometries",
+    "not_included": ["all tributaries", "canals and ditches", "waterbody polygons", "a causal river influence claim"]
+  },
+  "land_cover_covariate": {
+    "source": "USGS/MRLC NLCD 2021 Land Cover Science Products",
+    "sciencebase_item": "664658ffd34e1955f5a435c1",
+    "doi": "10.5066/P9JZ7AO3",
+    "product": "NLCD 2021 land cover, CONUS, 30 m categorical raster",
+    "resampling": "nearest-neighbour to the fixed 100 m target grid",
+    "summary": "retain the native class code and report class frequencies; no one-hot feature enters the trained models",
+    "download_control": "download only after source metadata and archive hash are recorded"
+  },
+  "analysis": {
+    "scope": "valid labelled pixels in F1-F4; primary descriptive emphasis F4",
+    "outputs": ["distance-score association", "land-cover class prevalence by label and fold", "score distributions by distance bin and land-cover class"],
+    "primary_models": "frozen V4.2 probability arrays; no retraining",
+    "prohibited_claims": ["river distance causes model failure", "NLCD class is a geological mechanism", "new or concealed fault discovery"]
+  },
+  "change_control": {
+    "data_download_before_metadata_record": "prohibited",
+    "model_retraining": "prohibited",
+    "source_or_resampling_change": "requires a new protocol"
+  }
+}

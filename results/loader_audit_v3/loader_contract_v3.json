@@ -1,0 +1,97 @@
+{
+  "schema_version": "fault-proxy-v3-loader-contract-1.0",
+  "loader": "02_scripts/modeling/dataset_common_v3.py",
+  "loader_sha256": "fc2b38fe371dd1f0e05a733397c8ded6653374e2bba314c8178d9106d4c371b2",
+  "fold_selection": "explicit fold_id is mandatory",
+  "normalization": "fold-specific training-only mean/std",
+  "training_patch": {
+    "size": 128,
+    "containment": "every input pixel must have partition code 1",
+    "loss_mask": "eligible train.npy pixels only",
+    "augmentation": "features, labels, and loss mask flip together"
+  },
+  "inference": {
+    "patch": 128,
+    "stride": 64,
+    "roles": [
+      "validation",
+      "test"
+    ],
+    "containment": "every window lies wholly in its requested role partition",
+    "coverage": "every role-core pixel covered at least once; no outside coverage"
+  },
+  "folds": [
+    {
+      "fold_id": "F1_NorthTest",
+      "training_pixels": 249234,
+      "positive_training_pixels": 18480,
+      "negative_training_pixels": 230754,
+      "pos_weight": "12.486688311688312",
+      "max_abs_normalized_train_mean": "8.5782486282344554e-06",
+      "max_abs_normalized_train_std_error": "4.8856272583108762e-08",
+      "complete_training_centers": 183752,
+      "positive_training_centers": 7709,
+      "background_training_centers": 122815,
+      "validation_windows": 72,
+      "validation_min_coverage": 1,
+      "validation_max_coverage": 9,
+      "test_windows": 48,
+      "test_min_coverage": 1,
+      "test_max_coverage": 9
+    },
+    {
+      "fold_id": "F2_NorthCentralTest",
+      "training_pixels": 279288,
+      "positive_training_pixels": 20738,
+      "negative_training_pixels": 258550,
+      "pos_weight": "12.467451056032404",
+      "max_abs_normalized_train_mean": "6.9427489616665765e-06",
+      "max_abs_normalized_train_std_error": "4.2130638977511126e-08",
+      "complete_training_centers": 204352,
+      "positive_training_centers": 12412,
+      "background_training_centers": 135322,
+      "validation_windows": 72,
+      "validation_min_coverage": 1,
+      "validation_max_coverage": 9,
+      "test_windows": 40,
+      "test_min_coverage": 1,
+      "test_max_coverage": 9
+    },
+    {
+      "fold_id": "F3_SouthCentralTest",
+      "training_pixels": 386980,
+      "positive_training_pixels": 9037,
+      "negative_training_pixels": 377943,
+      "pos_weight": "41.82173287595441",
+      "max_abs_normalized_train_mean": "3.8973523250339642e-06",
+      "max_abs_normalized_train_std_error": "4.7478140974277494e-08",
+      "complete_training_centers": 282632,
+      "positive_training_centers": 5210,
+      "background_training_centers": 225443,
+      "validation_windows": 48,
+      "validation_min_coverage": 1,
+      "validation_max_coverage": 9,
+      "test_windows": 40,
+      "test_min_coverage": 1,
+      "test_max_coverage": 9
+    },
+    {
+      "fold_id": "F4_SouthTest",
+      "training_pixels": 249234,
+      "positive_training_pixels": 18480,
+      "negative_training_pixels": 230754,
+      "pos_weight": "12.486688311688312",
+      "max_abs_normalized_train_mean": "8.5782486282344554e-06",
+      "max_abs_normalized_train_std_error": "4.8856272583108762e-08",
+      "complete_training_centers": 183752,
+      "positive_training_centers": 7709,
+      "background_training_centers": 122815,
+      "validation_windows": 48,
+      "validation_min_coverage": 1,
+      "validation_max_coverage": 9,
+      "test_windows": 72,
+      "test_min_coverage": 1,
+      "test_max_coverage": 9
+    }
+  ]
+}

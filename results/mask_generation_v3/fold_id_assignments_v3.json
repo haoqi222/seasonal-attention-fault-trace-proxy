@@ -1,0 +1,301 @@
+{
+  "policy": "Test IDs are removed from validation and training. Validation IDs are removed from training. Pixels within 0-1000 m of a purged ID are ignored, never background.",
+  "fold_roles": [
+    {
+      "fold_id": "F1_NorthTest",
+      "role": "train",
+      "blocks": [
+        "B2_NorthCentral",
+        "B3_SouthCentral"
+      ],
+      "allowed_fault_ids": [
+        "1987",
+        "1989",
+        "1999",
+        "2112",
+        "2113",
+        "2114",
+        "2115",
+        "2116",
+        "2117",
+        "2118",
+        "2119",
+        "2120",
+        "2123",
+        "2135"
+      ],
+      "purged_fault_ids": [
+        "2110",
+        "2111",
+        "2121",
+        "2122"
+      ]
+    },
+    {
+      "fold_id": "F1_NorthTest",
+      "role": "validation",
+      "blocks": [
+        "B4_South"
+      ],
+      "allowed_fault_ids": [
+        "1993",
+        "1995",
+        "2107",
+        "2108",
+        "2109",
+        "2110",
+        "2111"
+      ],
+      "purged_fault_ids": []
+    },
+    {
+      "fold_id": "F1_NorthTest",
+      "role": "test",
+      "blocks": [
+        "B1_North"
+      ],
+      "allowed_fault_ids": [
+        "2029",
+        "2030",
+        "2034",
+        "2038",
+        "2039",
+        "2040",
+        "2041",
+        "2042",
+        "2045",
+        "2046",
+        "2047",
+        "2048",
+        "2049",
+        "2121",
+        "2122"
+      ],
+      "purged_fault_ids": []
+    },
+    {
+      "fold_id": "F2_NorthCentralTest",
+      "role": "train",
+      "blocks": [
+        "B1_North",
+        "B3_SouthCentral"
+      ],
+      "allowed_fault_ids": [
+        "1987",
+        "1989",
+        "1999",
+        "2029",
+        "2030",
+        "2034",
+        "2038",
+        "2039",
+        "2040",
+        "2041",
+        "2042",
+        "2045",
+        "2046",
+        "2047",
+        "2048",
+        "2049",
+        "2112",
+        "2113",
+        "2114",
+        "2118",
+        "2119"
+      ],
+      "purged_fault_ids": [
+        "2110",
+        "2111",
+        "2115",
+        "2116",
+        "2117",
+        "2121",
+        "2122"
+      ]
+    },
+    {
+      "fold_id": "F2_NorthCentralTest",
+      "role": "validation",
+      "blocks": [
+        "B4_South"
+      ],
+      "allowed_fault_ids": [
+        "1993",
+        "1995",
+        "2107",
+        "2108",
+        "2109",
+        "2110",
+        "2111"
+      ],
+      "purged_fault_ids": []
+    },
+    {
+      "fold_id": "F2_NorthCentralTest",
+      "role": "test",
+      "blocks": [
+        "B2_NorthCentral"
+      ],
+      "allowed_fault_ids": [
+        "2115",
+        "2116",
+        "2117",
+        "2120",
+        "2121",
+        "2122",
+        "2123",
+        "2135"
+      ],
+      "purged_fault_ids": []
+    },
+    {
+      "fold_id": "F3_SouthCentralTest",
+      "role": "train",
+      "blocks": [
+        "B2_NorthCentral",
+        "B4_South"
+      ],
+      "allowed_fault_ids": [
+        "1993",
+        "1995",
+        "2107",
+        "2108",
+        "2109",
+        "2120",
+        "2123",
+        "2135"
+      ],
+      "purged_fault_ids": [
+        "2110",
+        "2111",
+        "2115",
+        "2116",
+        "2117",
+        "2121",
+        "2122"
+      ]
+    },
+    {
+      "fold_id": "F3_SouthCentralTest",
+      "role": "validation",
+      "blocks": [
+        "B1_North"
+      ],
+      "allowed_fault_ids": [
+        "2029",
+        "2030",
+        "2034",
+        "2038",
+        "2039",
+        "2040",
+        "2041",
+        "2042",
+        "2045",
+        "2046",
+        "2047",
+        "2048",
+        "2049",
+        "2122"
+      ],
+      "purged_fault_ids": [
+        "2121"
+      ]
+    },
+    {
+      "fold_id": "F3_SouthCentralTest",
+      "role": "test",
+      "blocks": [
+        "B3_SouthCentral"
+      ],
+      "allowed_fault_ids": [
+        "1987",
+        "1989",
+        "1999",
+        "2110",
+        "2111",
+        "2112",
+        "2113",
+        "2114",
+        "2115",
+        "2116",
+        "2117",
+        "2118",
+        "2119",
+        "2121"
+      ],
+      "purged_fault_ids": []
+    },
+    {
+      "fold_id": "F4_SouthTest",
+      "role": "train",
+      "blocks": [
+        "B2_NorthCentral",
+        "B3_SouthCentral"
+      ],
+      "allowed_fault_ids": [
+        "1987",
+        "1989",
+        "1999",
+        "2112",
+        "2113",
+        "2114",
+        "2115",
+        "2116",
+        "2117",
+        "2118",
+        "2119",
+        "2120",
+        "2123",
+        "2135"
+      ],
+      "purged_fault_ids": [
+        "2110",
+        "2111",
+        "2121",
+        "2122"
+      ]
+    },
+    {
+      "fold_id": "F4_SouthTest",
+      "role": "validation",
+      "blocks": [
+        "B1_North"
+      ],
+      "allowed_fault_ids": [
+        "2029",
+        "2030",
+        "2034",
+        "2038",
+        "2039",
+        "2040",
+        "2041",
+        "2042",
+        "2045",
+        "2046",
+        "2047",
+        "2048",
+        "2049",
+        "2121",
+        "2122"
+      ],
+      "purged_fault_ids": []
+    },
+    {
+      "fold_id": "F4_SouthTest",
+      "role": "test",
+      "blocks": [
+        "B4_South"
+      ],
+      "allowed_fault_ids": [
+        "1993",
+        "1995",
+        "2107",
+        "2108",
+        "2109",
+        "2110",
+        "2111"
+      ],
+      "purged_fault_ids": []
+    }
+  ]
+}

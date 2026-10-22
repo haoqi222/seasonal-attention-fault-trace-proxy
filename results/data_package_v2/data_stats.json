@@ -1,0 +1,76 @@
+{
+  "grid": {
+    "rows": 1840,
+    "columns": 539,
+    "pixel_m": 100,
+    "crs": "EPSG:32613"
+  },
+  "source": "Google Earth Engine LANDSAT/LC08/C02/T1_L2 and LANDSAT/LC09/C02/T1_L2",
+  "years": "2014-2025",
+  "seasons": [
+    "spring",
+    "summer",
+    "autumn",
+    "winter"
+  ],
+  "scientific_bands": [
+    "ST",
+    "red",
+    "nir08",
+    "swir16",
+    "NDVI",
+    "NDBI",
+    "NDWI",
+    "BSI"
+  ],
+  "n_model_channels": 32,
+  "count_band_role": "validity mask only; excluded from all model features",
+  "valid_pixels": 936253,
+  "valid_fraction": 0.944031822215052,
+  "label_target": "pixels within 200 m of QFFD segments whose linetype is Inferred",
+  "label_semantics": "inferred or approximately located mapped trace; not evidence that a fault is concealed",
+  "ignore_annulus_m": [
+    200,
+    1000
+  ],
+  "valid_class_counts": {
+    "positive": 67280,
+    "ignored_annulus": 178188,
+    "background": 690785
+  },
+  "split_rows": {
+    "train": [
+      [
+        0,
+        500
+      ],
+      [
+        550,
+        1050
+      ]
+    ],
+    "validation": [
+      1050,
+      1200
+    ],
+    "test": [
+      1250,
+      1840
+    ],
+    "buffers": [
+      [
+        500,
+        550
+      ],
+      [
+        1200,
+        1250
+      ]
+    ]
+  },
+  "normalization": "channelwise z-score fitted on valid training rows only",
+  "test_evaluation_pixels": 275591,
+  "test_positive_pixels": 7407,
+  "test_positive_rate": 0.026876784800664754,
+  "metric_scope": "descriptive held-out spatial test; no pixelwise confidence intervals"
+}

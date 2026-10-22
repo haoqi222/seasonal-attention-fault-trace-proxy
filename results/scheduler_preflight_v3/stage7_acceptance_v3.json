@@ -1,0 +1,118 @@
+{
+  "overall_accepted": true,
+  "status": "accepted_for_explicit_formal_launch_authorization",
+  "next_gate": "Request explicit user authorization before supplying all three formal execution gates.",
+  "checks": [
+    {
+      "check": "formal_results_absent_before_preflight",
+      "passed": true
+    },
+    {
+      "check": "actual_matrix_has_128_cells",
+      "passed": true
+    },
+    {
+      "check": "actual_matrix_all_pending_new",
+      "passed": true,
+      "counts": {
+        "pending_new": 128,
+        "retry_failed": 0,
+        "skip_completed": 0,
+        "conflict": 0
+      }
+    },
+    {
+      "check": "lane_assignment_is_48_48_32",
+      "passed": true,
+      "counts": {
+        "cuda:0": 48,
+        "cuda:1": 48,
+        "cpu": 32
+      }
+    },
+    {
+      "check": "actual_matrix_safe_to_launch",
+      "passed": true
+    },
+    {
+      "check": "actual_cell_ids_unique",
+      "passed": true
+    },
+    {
+      "check": "deep_and_rf_counts_match_lock",
+      "passed": true
+    },
+    {
+      "check": "fixture_status_counts_match",
+      "passed": true,
+      "counts": {
+        "pending_new": 124,
+        "retry_failed": 1,
+        "skip_completed": 1,
+        "conflict": 2
+      }
+    },
+    {
+      "check": "valid_completed_cell_is_skipped",
+      "passed": true
+    },
+    {
+      "check": "failed_attempt_is_resumable_as_attempt_2",
+      "passed": true
+    },
+    {
+      "check": "unfinished_attempt_is_conflict",
+      "passed": true
+    },
+    {
+      "check": "invalid_final_is_conflict",
+      "passed": true
+    },
+    {
+      "check": "fixture_conflicts_block_launch",
+      "passed": true
+    },
+    {
+      "check": "runner_command_has_exact_protocol_hash",
+      "passed": true
+    },
+    {
+      "check": "runner_command_has_locked_cell",
+      "passed": true
+    },
+    {
+      "check": "execution_without_execute_flag_is_blocked",
+      "passed": true
+    },
+    {
+      "check": "execution_with_wrong_phrase_is_blocked",
+      "passed": true
+    },
+    {
+      "check": "formal_gate_requires_stage7_audit",
+      "passed": true
+    },
+    {
+      "check": "formal_gate_requires_two_cuda_devices",
+      "passed": true
+    },
+    {
+      "check": "second_scheduler_lock_is_blocked",
+      "passed": true
+    },
+    {
+      "check": "all_sources_unchanged",
+      "passed": true
+    },
+    {
+      "check": "formal_results_absent_after_preflight",
+      "passed": true
+    }
+  ],
+  "check_count": 22,
+  "failed_checks": 0,
+  "protocol_sha256": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+  "planned_runs": 128,
+  "formal_training_started": false,
+  "formal_results_present": false
+}

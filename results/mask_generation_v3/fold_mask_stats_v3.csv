@@ -1,0 +1,13 @@
+﻿fold_id,role,blocks,valid_pixels,evaluation_pixels,positive_pixels,negative_pixels,ignored_valid_pixels,allowed_fault_ids,purged_fault_ids,purge_violation_pixels,test_label_matches_v2
+F1_NorthTest,train,B2_NorthCentral;B3_SouthCentral,355954,249234,18480,230754,106720,14,4,0,
+F1_NorthTest,validation,B4_South,302221,275591,7407,268184,26630,7,0,0,
+F1_NorthTest,test,B1_North,201898,161184,23629,137555,40714,15,0,0,True
+F2_NorthCentralTest,train,B1_North;B3_SouthCentral,380156,279288,20738,258550,100868,21,7,0,
+F2_NorthCentralTest,validation,B4_South,302221,275591,7407,268184,26630,7,0,0,
+F2_NorthCentralTest,test,B2_NorthCentral,177696,125574,15815,109759,52122,8,0,0,True
+F3_SouthCentralTest,train,B2_NorthCentral;B4_South,479917,386980,9037,377943,92937,8,7,0,
+F3_SouthCentralTest,validation,B1_North,201898,153580,16025,137555,48318,14,1,0,
+F3_SouthCentralTest,test,B3_SouthCentral,178258,134282,13287,120995,43976,14,0,0,True
+F4_SouthTest,train,B2_NorthCentral;B3_SouthCentral,355954,249234,18480,230754,106720,14,4,0,
+F4_SouthTest,validation,B1_North,201898,161184,23629,137555,40714,15,0,0,
+F4_SouthTest,test,B4_South,302221,275591,7407,268184,26630,7,0,0,True

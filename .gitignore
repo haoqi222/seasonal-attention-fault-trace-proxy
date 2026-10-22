@@ -1,0 +1,38 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Geospatial derivatives (rebuilt by code/data_prep/)
+*.tif
+*.tiff
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.ckpt
+*.pt
+*.pth
+*.joblib
+*.pkl
+
+# Intermediate and per-run products (15 GB on the workstation; checksums in results/)
+01_data/
+data/interim/
+logs/
+99_logs/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.tmp
+~$*
+desktop.ini
+
+# Local secrets (USGS M2M / Earth Engine credentials)
+*.env
+.env
+*_env.example.local
+service-account*.json

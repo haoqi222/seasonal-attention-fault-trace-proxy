@@ -1,0 +1,794 @@
+{
+  "schema_version": "fault-proxy-v3-split-1.0",
+  "status": "accepted_for_stage_2_mask_generation",
+  "grid": {
+    "shape": [
+      1840,
+      539
+    ],
+    "crs": "EPSG:32613",
+    "pixel_size_m": 100.0,
+    "buffer_rows": 50,
+    "buffer_distance_m": 5000.0
+  },
+  "label_policy": {
+    "positive_distance_m": 200.0,
+    "ignore_distance_m": 1000.0,
+    "fault_id_field": "fault_id",
+    "fault_ids_are_based_on": "all traces whose 1000 m influence zone intersects a role block",
+    "purge": "Test IDs are removed from validation and training. Validation IDs are removed from training. Pixels within 0-1000 m of a purged ID are ignored, never background."
+  },
+  "selected_blocks": {
+    "B1_North": [
+      0,
+      400
+    ],
+    "B2_NorthCentral": [
+      450,
+      800
+    ],
+    "B3_SouthCentral": [
+      850,
+      1200
+    ],
+    "B4_South": [
+      1250,
+      1840
+    ]
+  },
+  "excluded_buffers": {
+    "G1": [
+      400,
+      450
+    ],
+    "G2": [
+      800,
+      850
+    ],
+    "G3": [
+      1200,
+      1250
+    ]
+  },
+  "selection_rationale": "Equal 3-block and 5-block candidates leave the southern core with fewer than five direct QFFD fault IDs. The adjusted four-block design starts the southern core at row 1250, retains the existing geographically held-out south band, and meets the minimum test sample and fault-ID gates while inserting 5 km gaps at every internal boundary.",
+  "folds": [
+    {
+      "fold_id": "F1_NorthTest",
+      "roles": {
+        "train": {
+          "blocks": [
+            "B2_NorthCentral",
+            "B3_SouthCentral"
+          ],
+          "row_ranges": [
+            [
+              450,
+              800
+            ],
+            [
+              850,
+              1200
+            ]
+          ],
+          "raw_influence_fault_ids": [
+            "1987",
+            "1989",
+            "1999",
+            "2110",
+            "2111",
+            "2112",
+            "2113",
+            "2114",
+            "2115",
+            "2116",
+            "2117",
+            "2118",
+            "2119",
+            "2120",
+            "2121",
+            "2122",
+            "2123",
+            "2135"
+          ],
+          "allowed_fault_ids": [
+            "1987",
+            "1989",
+            "1999",
+            "2112",
+            "2113",
+            "2114",
+            "2115",
+            "2116",
+            "2117",
+            "2118",
+            "2119",
+            "2120",
+            "2123",
+            "2135"
+          ],
+          "purged_fault_ids": [
+            "2110",
+            "2111",
+            "2121",
+            "2122"
+          ],
+          "counts": {
+            "valid_pixels": 355954,
+            "evaluation_pixels": 249234,
+            "positive_pixels": 18480,
+            "negative_pixels": 230754,
+            "ignored_valid_pixels": 106720,
+            "positive_prevalence": 0.07414718698090951
+          },
+          "accepted": true
+        },
+        "validation": {
+          "blocks": [
+            "B4_South"
+          ],
+          "row_ranges": [
+            [
+              1250,
+              1840
+            ]
+          ],
+          "raw_influence_fault_ids": [
+            "1993",
+            "1995",
+            "2107",
+            "2108",
+            "2109",
+            "2110",
+            "2111"
+          ],
+          "allowed_fault_ids": [
+            "1993",
+            "1995",
+            "2107",
+            "2108",
+            "2109",
+            "2110",
+            "2111"
+          ],
+          "purged_fault_ids": [],
+          "counts": {
+            "valid_pixels": 302221,
+            "evaluation_pixels": 275591,
+            "positive_pixels": 7407,
+            "negative_pixels": 268184,
+            "ignored_valid_pixels": 26630,
+            "positive_prevalence": 0.026876784800664754
+          },
+          "accepted": true
+        },
+        "test": {
+          "blocks": [
+            "B1_North"
+          ],
+          "row_ranges": [
+            [
+              0,
+              400
+            ]
+          ],
+          "raw_influence_fault_ids": [
+            "2029",
+            "2030",
+            "2034",
+            "2038",
+            "2039",
+            "2040",
+            "2041",
+            "2042",
+            "2045",
+            "2046",
+            "2047",
+            "2048",
+            "2049",
+            "2121",
+            "2122"
+          ],
+          "allowed_fault_ids": [
+            "2029",
+            "2030",
+            "2034",
+            "2038",
+            "2039",
+            "2040",
+            "2041",
+            "2042",
+            "2045",
+            "2046",
+            "2047",
+            "2048",
+            "2049",
+            "2121",
+            "2122"
+          ],
+          "purged_fault_ids": [],
+          "counts": {
+            "valid_pixels": 201898,
+            "evaluation_pixels": 161184,
+            "positive_pixels": 23629,
+            "negative_pixels": 137555,
+            "ignored_valid_pixels": 40714,
+            "positive_prevalence": 0.14659643637085568
+          },
+          "accepted": true
+        }
+      },
+      "raw_test_validation_shared_ids": [],
+      "heldout_ids_present_in_raw_train": [
+        "2110",
+        "2111",
+        "2121",
+        "2122"
+      ]
+    },
+    {
+      "fold_id": "F2_NorthCentralTest",
+      "roles": {
+        "train": {
+          "blocks": [
+            "B1_North",
+            "B3_SouthCentral"
+          ],
+          "row_ranges": [
+            [
+              0,
+              400
+            ],
+            [
+              850,
+              1200
+            ]
+          ],
+          "raw_influence_fault_ids": [
+            "1987",
+            "1989",
+            "1999",
+            "2029",
+            "2030",
+            "2034",
+            "2038",
+            "2039",
+            "2040",
+            "2041",
+            "2042",
+            "2045",
+            "2046",
+            "2047",
+            "2048",
+            "2049",
+            "2110",
+            "2111",
+            "2112",
+            "2113",
+            "2114",
+            "2115",
+            "2116",
+            "2117",
+            "2118",
+            "2119",
+            "2121",
+            "2122"
+          ],
+          "allowed_fault_ids": [
+            "1987",
+            "1989",
+            "1999",
+            "2029",
+            "2030",
+            "2034",
+            "2038",
+            "2039",
+            "2040",
+            "2041",
+            "2042",
+            "2045",
+            "2046",
+            "2047",
+            "2048",
+            "2049",
+            "2112",
+            "2113",
+            "2114",
+            "2118",
+            "2119"
+          ],
+          "purged_fault_ids": [
+            "2110",
+            "2111",
+            "2115",
+            "2116",
+            "2117",
+            "2121",
+            "2122"
+          ],
+          "counts": {
+            "valid_pixels": 380156,
+            "evaluation_pixels": 279288,
+            "positive_pixels": 20738,
+            "negative_pixels": 258550,
+            "ignored_valid_pixels": 100868,
+            "positive_prevalence": 0.07425310074188651
+          },
+          "accepted": true
+        },
+        "validation": {
+          "blocks": [
+            "B4_South"
+          ],
+          "row_ranges": [
+            [
+              1250,
+              1840
+            ]
+          ],
+          "raw_influence_fault_ids": [
+            "1993",
+            "1995",
+            "2107",
+            "2108",
+            "2109",
+            "2110",
+            "2111"
+          ],
+          "allowed_fault_ids": [
+            "1993",
+            "1995",
+            "2107",
+            "2108",
+            "2109",
+            "2110",
+            "2111"
+          ],
+          "purged_fault_ids": [],
+          "counts": {
+            "valid_pixels": 302221,
+            "evaluation_pixels": 275591,
+            "positive_pixels": 7407,
+            "negative_pixels": 268184,
+            "ignored_valid_pixels": 26630,
+            "positive_prevalence": 0.026876784800664754
+          },
+          "accepted": true
+        },
+        "test": {
+          "blocks": [
+            "B2_NorthCentral"
+          ],
+          "row_ranges": [
+            [
+              450,
+              800
+            ]
+          ],
+          "raw_influence_fault_ids": [
+            "2115",
+            "2116",
+            "2117",
+            "2120",
+            "2121",
+            "2122",
+            "2123",
+            "2135"
+          ],
+          "allowed_fault_ids": [
+            "2115",
+            "2116",
+            "2117",
+            "2120",
+            "2121",
+            "2122",
+            "2123",
+            "2135"
+          ],
+          "purged_fault_ids": [],
+          "counts": {
+            "valid_pixels": 177696,
+            "evaluation_pixels": 125574,
+            "positive_pixels": 15815,
+            "negative_pixels": 109759,
+            "ignored_valid_pixels": 52122,
+            "positive_prevalence": 0.12594167582461338
+          },
+          "accepted": true
+        }
+      },
+      "raw_test_validation_shared_ids": [],
+      "heldout_ids_present_in_raw_train": [
+        "2110",
+        "2111",
+        "2115",
+        "2116",
+        "2117",
+        "2121",
+        "2122"
+      ]
+    },
+    {
+      "fold_id": "F3_SouthCentralTest",
+      "roles": {
+        "train": {
+          "blocks": [
+            "B2_NorthCentral",
+            "B4_South"
+          ],
+          "row_ranges": [
+            [
+              450,
+              800
+            ],
+            [
+              1250,
+              1840
+            ]
+          ],
+          "raw_influence_fault_ids": [
+            "1993",
+            "1995",
+            "2107",
+            "2108",
+            "2109",
+            "2110",
+            "2111",
+            "2115",
+            "2116",
+            "2117",
+            "2120",
+            "2121",
+            "2122",
+            "2123",
+            "2135"
+          ],
+          "allowed_fault_ids": [
+            "1993",
+            "1995",
+            "2107",
+            "2108",
+            "2109",
+            "2120",
+            "2123",
+            "2135"
+          ],
+          "purged_fault_ids": [
+            "2110",
+            "2111",
+            "2115",
+            "2116",
+            "2117",
+            "2121",
+            "2122"
+          ],
+          "counts": {
+            "valid_pixels": 479917,
+            "evaluation_pixels": 386980,
+            "positive_pixels": 9037,
+            "negative_pixels": 377943,
+            "ignored_valid_pixels": 92937,
+            "positive_prevalence": 0.02335262804279291
+          },
+          "accepted": true
+        },
+        "validation": {
+          "blocks": [
+            "B1_North"
+          ],
+          "row_ranges": [
+            [
+              0,
+              400
+            ]
+          ],
+          "raw_influence_fault_ids": [
+            "2029",
+            "2030",
+            "2034",
+            "2038",
+            "2039",
+            "2040",
+            "2041",
+            "2042",
+            "2045",
+            "2046",
+            "2047",
+            "2048",
+            "2049",
+            "2121",
+            "2122"
+          ],
+          "allowed_fault_ids": [
+            "2029",
+            "2030",
+            "2034",
+            "2038",
+            "2039",
+            "2040",
+            "2041",
+            "2042",
+            "2045",
+            "2046",
+            "2047",
+            "2048",
+            "2049",
+            "2122"
+          ],
+          "purged_fault_ids": [
+            "2121"
+          ],
+          "counts": {
+            "valid_pixels": 201898,
+            "evaluation_pixels": 153580,
+            "positive_pixels": 16025,
+            "negative_pixels": 137555,
+            "ignored_valid_pixels": 48318,
+            "positive_prevalence": 0.10434301341320484
+          },
+          "accepted": true
+        },
+        "test": {
+          "blocks": [
+            "B3_SouthCentral"
+          ],
+          "row_ranges": [
+            [
+              850,
+              1200
+            ]
+          ],
+          "raw_influence_fault_ids": [
+            "1987",
+            "1989",
+            "1999",
+            "2110",
+            "2111",
+            "2112",
+            "2113",
+            "2114",
+            "2115",
+            "2116",
+            "2117",
+            "2118",
+            "2119",
+            "2121"
+          ],
+          "allowed_fault_ids": [
+            "1987",
+            "1989",
+            "1999",
+            "2110",
+            "2111",
+            "2112",
+            "2113",
+            "2114",
+            "2115",
+            "2116",
+            "2117",
+            "2118",
+            "2119",
+            "2121"
+          ],
+          "purged_fault_ids": [],
+          "counts": {
+            "valid_pixels": 178258,
+            "evaluation_pixels": 134282,
+            "positive_pixels": 13287,
+            "negative_pixels": 120995,
+            "ignored_valid_pixels": 43976,
+            "positive_prevalence": 0.09894848155374511
+          },
+          "accepted": true
+        }
+      },
+      "raw_test_validation_shared_ids": [
+        "2121"
+      ],
+      "heldout_ids_present_in_raw_train": [
+        "2110",
+        "2111",
+        "2115",
+        "2116",
+        "2117",
+        "2121",
+        "2122"
+      ]
+    },
+    {
+      "fold_id": "F4_SouthTest",
+      "roles": {
+        "train": {
+          "blocks": [
+            "B2_NorthCentral",
+            "B3_SouthCentral"
+          ],
+          "row_ranges": [
+            [
+              450,
+              800
+            ],
+            [
+              850,
+              1200
+            ]
+          ],
+          "raw_influence_fault_ids": [
+            "1987",
+            "1989",
+            "1999",
+            "2110",
+            "2111",
+            "2112",
+            "2113",
+            "2114",
+            "2115",
+            "2116",
+            "2117",
+            "2118",
+            "2119",
+            "2120",
+            "2121",
+            "2122",
+            "2123",
+            "2135"
+          ],
+          "allowed_fault_ids": [
+            "1987",
+            "1989",
+            "1999",
+            "2112",
+            "2113",
+            "2114",
+            "2115",
+            "2116",
+            "2117",
+            "2118",
+            "2119",
+            "2120",
+            "2123",
+            "2135"
+          ],
+          "purged_fault_ids": [
+            "2110",
+            "2111",
+            "2121",
+            "2122"
+          ],
+          "counts": {
+            "valid_pixels": 355954,
+            "evaluation_pixels": 249234,
+            "positive_pixels": 18480,
+            "negative_pixels": 230754,
+            "ignored_valid_pixels": 106720,
+            "positive_prevalence": 0.07414718698090951
+          },
+          "accepted": true
+        },
+        "validation": {
+          "blocks": [
+            "B1_North"
+          ],
+          "row_ranges": [
+            [
+              0,
+              400
+            ]
+          ],
+          "raw_influence_fault_ids": [
+            "2029",
+            "2030",
+            "2034",
+            "2038",
+            "2039",
+            "2040",
+            "2041",
+            "2042",
+            "2045",
+            "2046",
+            "2047",
+            "2048",
+            "2049",
+            "2121",
+            "2122"
+          ],
+          "allowed_fault_ids": [
+            "2029",
+            "2030",
+            "2034",
+            "2038",
+            "2039",
+            "2040",
+            "2041",
+            "2042",
+            "2045",
+            "2046",
+            "2047",
+            "2048",
+            "2049",
+            "2121",
+            "2122"
+          ],
+          "purged_fault_ids": [],
+          "counts": {
+            "valid_pixels": 201898,
+            "evaluation_pixels": 161184,
+            "positive_pixels": 23629,
+            "negative_pixels": 137555,
+            "ignored_valid_pixels": 40714,
+            "positive_prevalence": 0.14659643637085568
+          },
+          "accepted": true
+        },
+        "test": {
+          "blocks": [
+            "B4_South"
+          ],
+          "row_ranges": [
+            [
+              1250,
+              1840
+            ]
+          ],
+          "raw_influence_fault_ids": [
+            "1993",
+            "1995",
+            "2107",
+            "2108",
+            "2109",
+            "2110",
+            "2111"
+          ],
+          "allowed_fault_ids": [
+            "1993",
+            "1995",
+            "2107",
+            "2108",
+            "2109",
+            "2110",
+            "2111"
+          ],
+          "purged_fault_ids": [],
+          "counts": {
+            "valid_pixels": 302221,
+            "evaluation_pixels": 275591,
+            "positive_pixels": 7407,
+            "negative_pixels": 268184,
+            "ignored_valid_pixels": 26630,
+            "positive_prevalence": 0.026876784800664754
+          },
+          "accepted": true
+        }
+      },
+      "raw_test_validation_shared_ids": [],
+      "heldout_ids_present_in_raw_train": [
+        "2110",
+        "2111",
+        "2121",
+        "2122"
+      ]
+    }
+  ],
+  "input_sha256": {
+    "y": "099a63e6ced00623c424b390e86c01bc4bac70249c74aec656b0830ce65ee649",
+    "valid": "bb72c8e95ab6cf98d0bea5abddb9f097601973ad9325a7cfe724b9fab7ef679f",
+    "vector": "7863828578a21bb05ce88d062f23124c574018ae67f5ebae96eec545da05abe5",
+    "reference": "9c09c6293dff103d5d3c501b24c77f72b7236aa00887377359de50b91684016c"
+  },
+  "role_gates": {
+    "train": {
+      "min_eval_pixels": 200000,
+      "min_positive_pixels": 5000,
+      "min_fault_ids": 5
+    },
+    "validation": {
+      "min_eval_pixels": 100000,
+      "min_positive_pixels": 5000,
+      "min_fault_ids": 5
+    },
+    "test": {
+      "min_eval_pixels": 100000,
+      "min_positive_pixels": 5000,
+      "min_fault_ids": 5
+    }
+  }
+}

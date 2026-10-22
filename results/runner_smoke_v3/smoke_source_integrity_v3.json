@@ -1,0 +1,77 @@
+{
+  "source_files": {
+    "protocol": {
+      "path": "03_configs/experiment_v3_protocol.json",
+      "sha256_before": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+      "sha256_after": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+      "unchanged": true
+    },
+    "stage5_lock": {
+      "path": "04_results/training_protocol_v3/protocol_lock_v3.json",
+      "sha256_before": "08136c558b6d3d73f1608ccee41bd28217a40a65a8e8d24f68ef18f395556a17",
+      "sha256_after": "08136c558b6d3d73f1608ccee41bd28217a40a65a8e8d24f68ef18f395556a17",
+      "unchanged": true
+    },
+    "stage5_acceptance": {
+      "path": "04_results/training_protocol_v3/stage5_acceptance_v3.json",
+      "sha256_before": "0a89d4f42b0de99c7114f31909abf66ec85a7bb794117365a8b3da01826887da",
+      "sha256_after": "0a89d4f42b0de99c7114f31909abf66ec85a7bb794117365a8b3da01826887da",
+      "unchanged": true
+    },
+    "runner": {
+      "path": "02_scripts/modeling/13_run_experiment_v3.py",
+      "sha256_before": "13f2a2e1fd39affd38e3ab8fb93db1b42b85bdccdf61a58597624d47f1f094be",
+      "sha256_after": "13f2a2e1fd39affd38e3ab8fb93db1b42b85bdccdf61a58597624d47f1f094be",
+      "unchanged": true
+    },
+    "loader": {
+      "path": "02_scripts/modeling/dataset_common_v3.py",
+      "sha256_before": "fc2b38fe371dd1f0e05a733397c8ded6653374e2bba314c8178d9106d4c371b2",
+      "sha256_after": "fc2b38fe371dd1f0e05a733397c8ded6653374e2bba314c8178d9106d4c371b2",
+      "unchanged": true
+    },
+    "models": {
+      "path": "02_scripts/modeling/models_v3.py",
+      "sha256_before": "821206eb8bb532e7f4dc11bd8ef849e0256dbb145e2240ec8af0f220dcdaa53b",
+      "sha256_after": "821206eb8bb532e7f4dc11bd8ef849e0256dbb145e2240ec8af0f220dcdaa53b",
+      "unchanged": true
+    },
+    "temporal_cmt": {
+      "path": "02_scripts/modeling/temporal_cmt.py",
+      "sha256_before": "ceff0d18f85f63e58ea72f6ab07a67126231747813a236ac2fe9f7f6929ccfab",
+      "sha256_after": "ceff0d18f85f63e58ea72f6ab07a67126231747813a236ac2fe9f7f6929ccfab",
+      "unchanged": true
+    },
+    "X": {
+      "path": "01_data/interim/dataset_v2/X.npy",
+      "sha256_before": "f13736ac44457daa39c541d29e15b0f48ccb8448f6b11981d749c6778e7e3f27",
+      "sha256_after": "f13736ac44457daa39c541d29e15b0f48ccb8448f6b11981d749c6778e7e3f27",
+      "unchanged": true
+    },
+    "F1_y": {
+      "path": "01_data/interim/dataset_v3/F1_NorthTest/y.npy",
+      "sha256_before": "6ea4c1d0060458b5e20fb3bb38ce83ba8f006c515393eea133d66f89407cf54b",
+      "sha256_after": "6ea4c1d0060458b5e20fb3bb38ce83ba8f006c515393eea133d66f89407cf54b",
+      "unchanged": true
+    },
+    "F1_partition": {
+      "path": "01_data/interim/dataset_v3/F1_NorthTest/partition.npy",
+      "sha256_before": "f887b88e70b3fd324e8cc35ec723d5860a366c741a0f1bd9fac7ce8394e33d66",
+      "sha256_after": "f887b88e70b3fd324e8cc35ec723d5860a366c741a0f1bd9fac7ce8394e33d66",
+      "unchanged": true
+    },
+    "F1_train": {
+      "path": "01_data/interim/dataset_v3/F1_NorthTest/train.npy",
+      "sha256_before": "d0adac300e2db836b81e1ff7e747f4b316e7fcabdce0e8df60d781608dc6b10b",
+      "sha256_after": "d0adac300e2db836b81e1ff7e747f4b316e7fcabdce0e8df60d781608dc6b10b",
+      "unchanged": true
+    },
+    "F1_normalization": {
+      "path": "01_data/interim/normalization_v3/F1_NorthTest/norm_stats.json",
+      "sha256_before": "b7e58a32b4f161121b195002789de30da431ce04ed2e3f0e130e3ff7aaeca5d2",
+      "sha256_after": "b7e58a32b4f161121b195002789de30da431ce04ed2e3f0e130e3ff7aaeca5d2",
+      "unchanged": true
+    }
+  },
+  "all_sources_unchanged": true
+}

@@ -1,0 +1,13 @@
+{
+  "status": "accepted",
+  "protocol_sha256": "9d61b6bde10443960cb1c2647641c30bc47e03369115bd1b8c9a8364290e99a0",
+  "parent_training_protocol_sha256": "6391a2680c2173f0deda638f2b8c317d1d681def25b73e7da9df9ccf92148627",
+  "validated_cells": 48,
+  "failed_cells": 0,
+  "seed_ensembles": 12,
+  "maximum_metric_recalculation_delta": 0.0,
+  "blend_floor": 0.01,
+  "matched_spatial_protocol_sha256": "43315ba42f2686b339644e0e89afd964bab32ef4647aa9189bfd4eea96118b1b",
+  "supersedes": "V1 floor-0.05 probability maps for final comparison; training checkpoints unchanged",
+  "next_gate": "independent checksum and ensemble recomputation"
+}

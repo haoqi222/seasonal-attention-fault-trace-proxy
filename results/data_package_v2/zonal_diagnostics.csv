@@ -1,0 +1,22 @@
+﻿design,zone,rows,n,positive,auc,ap
+Random forest,North,"[1250,1447)",90018,2650,0.624405,0.035238
+Random forest,Central,"[1447,1644)",86246,4556,0.594743,0.060127
+Random forest,South,"[1644,1840)",99327,201,0.650925,0.002670
+U-Net (ResNet-18 encoder),North,"[1250,1447)",90018,2650,0.718966,0.048230
+U-Net (ResNet-18 encoder),Central,"[1447,1644)",86246,4556,0.601936,0.059573
+U-Net (ResNet-18 encoder),South,"[1644,1840)",99327,201,0.927371,0.033886
+"Temporal-attention, four seasons, all bands",North,"[1250,1447)",90018,2650,0.696545,0.045681
+"Temporal-attention, four seasons, all bands",Central,"[1447,1644)",86246,4556,0.539385,0.053873
+"Temporal-attention, four seasons, all bands",South,"[1644,1840)",99327,201,0.433928,0.001627
+"Season concatenation, four seasons, all bands",North,"[1250,1447)",90018,2650,0.729336,0.051977
+"Season concatenation, four seasons, all bands",Central,"[1447,1644)",86246,4556,0.577518,0.057408
+"Season concatenation, four seasons, all bands",South,"[1644,1840)",99327,201,0.395127,0.001519
+"Temporal-attention, summer only, all bands",North,"[1250,1447)",90018,2650,0.516461,0.028537
+"Temporal-attention, summer only, all bands",Central,"[1447,1644)",86246,4556,0.527268,0.058525
+"Temporal-attention, summer only, all bands",South,"[1644,1840)",99327,201,0.694326,0.003236
+"Temporal-attention, four seasons, thermal only",North,"[1250,1447)",90018,2650,0.586281,0.031931
+"Temporal-attention, four seasons, thermal only",Central,"[1447,1644)",86246,4556,0.425628,0.041344
+"Temporal-attention, four seasons, thermal only",South,"[1644,1840)",99327,201,0.725383,0.006499
+"Temporal-attention, four seasons, optical only",North,"[1250,1447)",90018,2650,0.376744,0.021157
+"Temporal-attention, four seasons, optical only",Central,"[1447,1644)",86246,4556,0.422776,0.042632
+"Temporal-attention, four seasons, optical only",South,"[1644,1840)",99327,201,0.685862,0.002953

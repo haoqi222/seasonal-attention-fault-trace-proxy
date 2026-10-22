@@ -1,0 +1,7 @@
+﻿left_block,right_block,direct_overlap_count,direct_overlap_ids,influence_overlap_count,influence_overlap_ids
+B1_North,B2_NorthCentral,2,2121;2122,2,2121;2122
+B1_North,B3_SouthCentral,1,2121,1,2121
+B1_North,B4_South,0,,0,
+B2_NorthCentral,B3_SouthCentral,4,2115;2116;2117;2121,4,2115;2116;2117;2121
+B2_NorthCentral,B4_South,0,,0,
+B3_SouthCentral,B4_South,2,2110;2111,2,2110;2111

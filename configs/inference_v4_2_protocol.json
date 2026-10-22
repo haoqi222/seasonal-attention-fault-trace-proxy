@@ -1,0 +1,83 @@
+{
+  "schema_version": "fault-proxy-v4.2-inference-protocol-1.0",
+  "status": "frozen_before_v4_inference",
+  "purpose": "Evaluation-only center-weighted re-inference from accepted V3 checkpoints, with an artifact acceptance rule defined on absolute seam level and severe baseline cases.",
+  "parent_v3": {
+    "training_protocol_sha256": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+    "ordered_run_manifest_digest": "7d8a094fb7b13542c9977574597158cdcf9bef9859cd6513413d1ec8c346bf49",
+    "formal_cells": 128,
+    "deep_cells": 96,
+    "random_forest_cells": 32
+  },
+  "supersedes_rejected_preflights": [
+    {
+      "protocol_sha256": "dcd6db196aaaf8055fab75c3d083c4df8ddfa4f42e6924d6ba3c30a36e42812c",
+      "test_probability_files_created": 0,
+      "reason": "Required relative improvement even when the uniform seam ratio was approximately one."
+    },
+    {
+      "protocol_sha256": "db3c420bc3f8e64ee3c5ff06da7b62e12f858d0a165e74557a3017eb3231b7fe",
+      "test_probability_files_created": 0,
+      "reason": "Required 50 percent relative reduction for marginal baseline ratios such as 1.43 even when the weighted absolute ratio was already 1.09."
+    }
+  ],
+  "change_scope": {
+    "training": "unchanged; use the exact accepted V3 checkpoints",
+    "data_folds_labels_normalization": "unchanged",
+    "model_architectures": "unchanged",
+    "window_size_pixels": 128,
+    "stride_pixels": 64,
+    "test_time_augmentation": false,
+    "changed_component": "overlap fusion weights only"
+  },
+  "blend": {
+    "name": "separable_raised_cosine_positive_floor",
+    "axis_formula": "w[i] = floor + (1-floor) * sin(pi*(i+0.5)/patch)^2",
+    "two_dimensional_weight": "outer(w, w)",
+    "floor": 0.01,
+    "normalization": "divide accumulated weighted probabilities by accumulated weights at each covered pixel",
+    "boundary_handling": "all role-contained windows retained; positive floor guarantees nonzero support at geographic role edges",
+    "selection_basis": "Floor 0.01 was evaluated only on V4.1 validation outputs. No V4-series test probability or label metric was used to choose blending or acceptance rules."
+  },
+  "preflight": {
+    "roles_permitted": [
+      "validation"
+    ],
+    "cells": "seed 0 for every six deep models and four folds; 24 validation-only cells",
+    "acceptance": {
+      "all_outputs_finite_and_in_range": true,
+      "support_exactly_matches_validation_geographic_role": true,
+      "material_uniform_seam_ratio_threshold": 2.0,
+      "material_case_maximum_weighted_over_uniform": 0.5,
+      "all_case_maximum_weighted_seam_ratio": 1.5,
+      "all_case_mean_weighted_seam_ratio": 1.2,
+      "test_probability_access": false,
+      "label_metric_used_for_blend_selection": false
+    }
+  },
+  "formal_matrix": {
+    "deep": "rerun validation and test inference for all 6 models x 4 folds x 4 seeds from accepted V3 checkpoints",
+    "random_forest": "reuse the exact 32 accepted V3 validation/test probability arrays because RF has no sliding-window inference",
+    "required_cells": 128,
+    "mixing_partial_v3_and_v4_deep_probabilities": "prohibited"
+  },
+  "evaluation": {
+    "metrics": "identical to V3",
+    "seed_ensemble": "arithmetic mean of four seed probability maps within each model and fold",
+    "primary_summary": "equal-weight mean and sample standard deviation of four fold-level seed-ensemble AP values",
+    "pooled_oof": "supplementary only",
+    "required_comparison": "report V4.2 minus V3 metric changes and whether the scientific conclusion changes"
+  },
+  "output": {
+    "preflight_root": "04_results/inference_v4_preflight/<protocol_sha256>",
+    "formal_root": "01_data/interim/results_v4/<protocol_sha256>",
+    "logs": "99_logs/inference_v4/<protocol_sha256>",
+    "overwrite": "prohibited"
+  },
+  "scientific_boundaries": [
+    "Scores rank proximity to QFFD traces coded as Inferred under a proxy label.",
+    "Outputs are not calibrated geological fault probabilities.",
+    "No concealed-fault discovery claim is permitted.",
+    "A higher mean AP does not establish stable architecture superiority without consistent fold-level differences."
+  ]
+}

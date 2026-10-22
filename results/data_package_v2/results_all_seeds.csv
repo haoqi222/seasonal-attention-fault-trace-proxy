@@ -1,0 +1,29 @@
+﻿design,seed,auc,ap,f1_at_0.5,precision_at_0.5,recall_at_0.5,best_epoch,params_M,tta,source
+Random forest,0,0.571255,0.028580,0.029509,0.017489,0.094370,,,False,01_data/interim/results_v2/rf_seed0_result.json
+Random forest,1,0.565649,0.028273,0.031409,0.018605,0.100716,,,False,01_data/interim/results_v2/rf_seed1_result.json
+Random forest,2,0.567724,0.028408,0.030965,0.018450,0.096260,,,False,01_data/interim/results_v2/rf_seed2_result.json
+Random forest,3,0.566890,0.028401,0.031395,0.018686,0.098150,,,False,01_data/interim/results_v2/rf_seed3_result.json
+U-Net (ResNet-18 encoder),0,0.639222,0.034998,0.073751,0.039264,0.606183,3,14.419153,True,01_data/interim/results_v2/unet_seed0_result.json
+U-Net (ResNet-18 encoder),1,0.580760,0.029847,0.034650,0.022120,0.079924,7,14.419153,True,01_data/interim/results_v2/unet_seed1_result.json
+U-Net (ResNet-18 encoder),2,0.616114,0.033148,0.066192,0.036507,0.354259,4,14.419153,True,01_data/interim/results_v2/unet_seed2_result.json
+U-Net (ResNet-18 encoder),3,0.621969,0.033897,0.064732,0.035577,0.358580,3,14.419153,True,01_data/interim/results_v2/unet_seed3_result.json
+"Temporal-attention, four seasons, all bands",0,0.399480,0.020465,0.036699,0.019447,0.325098,2,0.638401,True,01_data/interim/results_v2/tcmt_attn_s4_all_seed0_result.json
+"Temporal-attention, four seasons, all bands",1,0.613395,0.036438,0.073186,0.039313,0.528824,5,0.638401,True,01_data/interim/results_v2/tcmt_attn_s4_all_seed1_result.json
+"Temporal-attention, four seasons, all bands",2,0.556547,0.027244,0.067183,0.035118,0.772647,6,0.638401,True,01_data/interim/results_v2/tcmt_attn_s4_all_seed2_result.json
+"Temporal-attention, four seasons, all bands",3,0.543471,0.030273,0.051673,0.029691,0.199001,1,0.638401,True,01_data/interim/results_v2/tcmt_attn_s4_all_seed3_result.json
+"Season concatenation, four seasons, all bands",0,0.468171,0.022690,0.046890,0.024583,0.506413,2,0.571921,True,01_data/interim/results_v2/tcmt_concat_s4_all_seed0_result.json
+"Season concatenation, four seasons, all bands",1,0.636869,0.039178,0.073487,0.038411,0.846227,3,0.571921,True,01_data/interim/results_v2/tcmt_concat_s4_all_seed1_result.json
+"Season concatenation, four seasons, all bands",2,0.388655,0.019920,0.039873,0.020770,0.496692,1,0.571921,True,01_data/interim/results_v2/tcmt_concat_s4_all_seed2_result.json
+"Season concatenation, four seasons, all bands",3,0.607567,0.034758,0.069716,0.037135,0.568516,15,0.571921,True,01_data/interim/results_v2/tcmt_concat_s4_all_seed3_result.json
+"Temporal-attention, summer only, all bands",0,0.519730,0.026516,0.047936,0.025529,0.391927,2,0.573121,True,01_data/interim/results_v2/tcmt_attn_s1_all_seed0_result.json
+"Temporal-attention, summer only, all bands",1,0.452180,0.022215,0.019779,0.011448,0.072634,10,0.573121,True,01_data/interim/results_v2/tcmt_attn_s1_all_seed1_result.json
+"Temporal-attention, summer only, all bands",2,0.407869,0.020452,0.019812,0.010854,0.113406,5,0.573121,True,01_data/interim/results_v2/tcmt_attn_s1_all_seed2_result.json
+"Temporal-attention, summer only, all bands",3,0.490941,0.031087,0.048306,0.026305,0.295261,8,0.573121,True,01_data/interim/results_v2/tcmt_attn_s1_all_seed3_result.json
+"Temporal-attention, four seasons, thermal only",0,0.368307,0.019158,0.045840,0.023772,0.639800,1,0.637393,True,01_data/interim/results_v2/tcmt_attn_s4_thermal_seed0_result.json
+"Temporal-attention, four seasons, thermal only",1,0.511132,0.025378,0.035729,0.020325,0.147563,11,0.637393,True,01_data/interim/results_v2/tcmt_attn_s4_thermal_seed1_result.json
+"Temporal-attention, four seasons, thermal only",2,0.397847,0.020000,0.015705,0.008831,0.070879,1,0.637393,True,01_data/interim/results_v2/tcmt_attn_s4_thermal_seed2_result.json
+"Temporal-attention, four seasons, thermal only",3,0.505606,0.024849,0.050607,0.026608,0.516133,1,0.637393,True,01_data/interim/results_v2/tcmt_attn_s4_thermal_seed3_result.json
+"Temporal-attention, four seasons, optical only",0,0.445873,0.021973,0.034532,0.018588,0.242743,2,0.638257,True,01_data/interim/results_v2/tcmt_attn_s4_optical_seed0_result.json
+"Temporal-attention, four seasons, optical only",1,0.348586,0.018756,0.037273,0.019339,0.513028,2,0.638257,True,01_data/interim/results_v2/tcmt_attn_s4_optical_seed1_result.json
+"Temporal-attention, four seasons, optical only",2,0.440089,0.021677,0.042507,0.022289,0.457675,2,0.638257,True,01_data/interim/results_v2/tcmt_attn_s4_optical_seed2_result.json
+"Temporal-attention, four seasons, optical only",3,0.355137,0.018741,0.014489,0.008357,0.054408,5,0.638257,True,01_data/interim/results_v2/tcmt_attn_s4_optical_seed3_result.json

@@ -1,0 +1,272 @@
+{
+  "overall_accepted": true,
+  "status": "accepted_for_runner_implementation_and_smoke_test",
+  "next_gate": "Implement a protocol-hash-bound runner and pass CPU/GPU one-batch smoke tests, checkpoint round-trip, and output-schema validation before full training.",
+  "checks": [
+    {
+      "check": "protocol_status_frozen_before_training",
+      "passed": true
+    },
+    {
+      "check": "stage2_acceptance_clean",
+      "passed": true
+    },
+    {
+      "check": "stage3_acceptance_clean",
+      "passed": true
+    },
+    {
+      "check": "stage4_acceptance_clean",
+      "passed": true
+    },
+    {
+      "check": "protocol_folds_match_frozen_manifest",
+      "passed": true,
+      "folds": [
+        "F1_NorthTest",
+        "F2_NorthCentralTest",
+        "F3_SouthCentralTest",
+        "F4_SouthTest"
+      ]
+    },
+    {
+      "check": "four_unique_seeds_frozen",
+      "passed": true,
+      "seeds": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "check": "configured_deep_models_match_factory",
+      "passed": true,
+      "model_ids": [
+        "unet_matched",
+        "temporal_attn",
+        "temporal_concat",
+        "summer_only",
+        "thermal_only",
+        "optical_only"
+      ]
+    },
+    {
+      "check": "model_unet_matched_parameter_count",
+      "passed": true,
+      "actual": 487617,
+      "expected": 487617
+    },
+    {
+      "check": "model_unet_matched_forward_shape_and_finiteness",
+      "passed": true,
+      "output_shape": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    {
+      "check": "model_temporal_attn_parameter_count",
+      "passed": true,
+      "actual": 638401,
+      "expected": 638401
+    },
+    {
+      "check": "model_temporal_attn_forward_shape_and_finiteness",
+      "passed": true,
+      "output_shape": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    {
+      "check": "model_temporal_concat_parameter_count",
+      "passed": true,
+      "actual": 571921,
+      "expected": 571921
+    },
+    {
+      "check": "model_temporal_concat_forward_shape_and_finiteness",
+      "passed": true,
+      "output_shape": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    {
+      "check": "model_summer_only_parameter_count",
+      "passed": true,
+      "actual": 573121,
+      "expected": 573121
+    },
+    {
+      "check": "model_summer_only_forward_shape_and_finiteness",
+      "passed": true,
+      "output_shape": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    {
+      "check": "model_thermal_only_parameter_count",
+      "passed": true,
+      "actual": 637393,
+      "expected": 637393
+    },
+    {
+      "check": "model_thermal_only_forward_shape_and_finiteness",
+      "passed": true,
+      "output_shape": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    {
+      "check": "model_optical_only_parameter_count",
+      "passed": true,
+      "actual": 638257,
+      "expected": 638257
+    },
+    {
+      "check": "model_optical_only_forward_shape_and_finiteness",
+      "passed": true,
+      "output_shape": [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    {
+      "check": "primary_deep_capacity_ratio_at_most_1_5",
+      "passed": true,
+      "ratio": 1.3092262985088707
+    },
+    {
+      "check": "legacy_large_resnet_unet_excluded_from_v3_primary",
+      "passed": true
+    },
+    {
+      "check": "F1_NorthTest_natural_center_fraction_matches_loader",
+      "passed": true,
+      "configured": 0.05906193496981398,
+      "recomputed": 0.05906193496981398
+    },
+    {
+      "check": "F1_NorthTest_positive_weight_matches_loader",
+      "passed": true,
+      "configured": 12.486688311688312,
+      "recomputed": 12.486688311688312
+    },
+    {
+      "check": "F2_NorthCentralTest_natural_center_fraction_matches_loader",
+      "passed": true,
+      "configured": 0.0840158663543937,
+      "recomputed": 0.0840158663543937
+    },
+    {
+      "check": "F2_NorthCentralTest_positive_weight_matches_loader",
+      "passed": true,
+      "configured": 12.467451056032404,
+      "recomputed": 12.467451056032404
+    },
+    {
+      "check": "F3_SouthCentralTest_natural_center_fraction_matches_loader",
+      "passed": true,
+      "configured": 0.0225880435112485,
+      "recomputed": 0.0225880435112485
+    },
+    {
+      "check": "F3_SouthCentralTest_positive_weight_matches_loader",
+      "passed": true,
+      "configured": 41.82173287595441,
+      "recomputed": 41.82173287595441
+    },
+    {
+      "check": "F4_SouthTest_natural_center_fraction_matches_loader",
+      "passed": true,
+      "configured": 0.05906193496981398,
+      "recomputed": 0.05906193496981398
+    },
+    {
+      "check": "F4_SouthTest_positive_weight_matches_loader",
+      "passed": true,
+      "configured": 12.486688311688312,
+      "recomputed": 12.486688311688312
+    },
+    {
+      "check": "steps_per_epoch_consistent",
+      "passed": true
+    },
+    {
+      "check": "early_stop_has_minimum_training_horizon",
+      "passed": true
+    },
+    {
+      "check": "checkpoint_uses_threshold_free_validation_AP",
+      "passed": true
+    },
+    {
+      "check": "same_optimizer_schedule_for_all_deep_models",
+      "passed": true
+    },
+    {
+      "check": "primary_evaluation_has_no_TTA_or_test_tuning",
+      "passed": true
+    },
+    {
+      "check": "primary_metric_and_summary_are_frozen",
+      "passed": true
+    },
+    {
+      "check": "random_forest_feature_fairness_is_explicit",
+      "passed": true
+    },
+    {
+      "check": "failure_policy_forbids_seed_replacement_and_one_off_OOM_fix",
+      "passed": true
+    },
+    {
+      "check": "change_control_forbids_cross_protocol_mixing",
+      "passed": true
+    },
+    {
+      "check": "run_matrix_counts_match_protocol",
+      "passed": true,
+      "deep_runs": 96,
+      "random_forest_runs": 32,
+      "total_runs": 128
+    },
+    {
+      "check": "run_ids_and_output_directories_unique",
+      "passed": true
+    },
+    {
+      "check": "results_v3_absent_before_protocol_freeze",
+      "passed": true,
+      "path": "01_data/interim/results_v3"
+    },
+    {
+      "check": "two_RTX_5090_GPUs_ready",
+      "passed": true
+    },
+    {
+      "check": "at_least_500GB_project_disk_free",
+      "passed": true
+    },
+    {
+      "check": "all_protocol_sources_unchanged_during_stage5",
+      "passed": true
+    }
+  ]
+}

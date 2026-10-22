@@ -1,0 +1,217 @@
+{
+  "schema_version": "fault-proxy-v3-training-protocol-1.0",
+  "status": "frozen_before_training",
+  "scientific_scope": {
+    "target": "ranking proximity to QFFD traces coded as Inferred under a proxy label",
+    "temporal_attention_role": "evaluated method, not presumed contribution or superior model",
+    "primary_question": "Does explicit temporal attention provide a stable advantage over capacity-matched convolution and seasonal concatenation across four spatial folds?",
+    "prohibited_claims": [
+      "concealed fault detection",
+      "new fault discovery",
+      "calibrated probability of geological fault presence",
+      "robustness inferred from a single fold or selected seed"
+    ]
+  },
+  "data": {
+    "folds": [
+      "F1_NorthTest",
+      "F2_NorthCentralTest",
+      "F3_SouthCentralTest",
+      "F4_SouthTest"
+    ],
+    "loader": "02_scripts/modeling/dataset_common_v3.py",
+    "fold_labels_and_masks": "01_data/interim/dataset_v3",
+    "fold_normalization": "01_data/interim/normalization_v3",
+    "patch_pixels": 128,
+    "inference_stride_pixels": 64,
+    "test_access": "one evaluation after checkpoint selection for each completed run"
+  },
+  "seeds": [0, 1, 2, 3],
+  "deep_models": [
+    {
+      "model_id": "unet_matched",
+      "analysis_tier": "primary_capacity_matched",
+      "input": "all 32 channels",
+      "expected_trainable_parameters": 487617
+    },
+    {
+      "model_id": "temporal_attn",
+      "analysis_tier": "primary_capacity_matched",
+      "input": "four seasons and all eight variables",
+      "expected_trainable_parameters": 638401
+    },
+    {
+      "model_id": "temporal_concat",
+      "analysis_tier": "primary_capacity_matched",
+      "input": "four seasons and all eight variables",
+      "expected_trainable_parameters": 571921
+    },
+    {
+      "model_id": "summer_only",
+      "analysis_tier": "secondary_input_ablation",
+      "input": "summer and all eight variables",
+      "expected_trainable_parameters": 573121
+    },
+    {
+      "model_id": "thermal_only",
+      "analysis_tier": "secondary_input_ablation",
+      "input": "four seasons and ST only",
+      "expected_trainable_parameters": 637393
+    },
+    {
+      "model_id": "optical_only",
+      "analysis_tier": "secondary_input_ablation",
+      "input": "four seasons and seven non-ST variables",
+      "expected_trainable_parameters": 638257
+    }
+  ],
+  "random_forest_models": [
+    {
+      "model_id": "rf_direct",
+      "analysis_tier": "primary_nonneural_baseline",
+      "features": "32 fold-normalized direct channels"
+    },
+    {
+      "model_id": "rf_context",
+      "analysis_tier": "secondary_context_sensitivity",
+      "features": "32 direct channels plus 7x7 mean and std for ST, NIR, and NDVI in four seasons; 56 total"
+    }
+  ],
+  "deep_training": {
+    "maximum_epochs": 60,
+    "minimum_epochs_before_early_stop": 15,
+    "patches_per_epoch": 4096,
+    "batch_size": 16,
+    "steps_per_epoch": 256,
+    "sampler": {
+      "policy": "natural eligible-center prevalence",
+      "reason": "avoid combining 50:50 center oversampling with a second full class-weight correction",
+      "fold_fault_center_fraction": {
+        "F1_NorthTest": 0.05906193496981398,
+        "F2_NorthCentralTest": 0.0840158663543937,
+        "F3_SouthCentralTest": 0.0225880435112485,
+        "F4_SouthTest": 0.05906193496981398
+      }
+    },
+    "loss": {
+      "name": "BCEWithLogitsLoss",
+      "positive_weight_policy": "eligible training negative pixels divided by positive pixels, independently per fold",
+      "fold_positive_weight": {
+        "F1_NorthTest": 12.486688311688312,
+        "F2_NorthCentralTest": 12.467451056032404,
+        "F3_SouthCentralTest": 41.82173287595441,
+        "F4_SouthTest": 12.486688311688312
+      }
+    },
+    "optimizer": {
+      "name": "AdamW",
+      "learning_rate": 0.0001,
+      "weight_decay": 0.0001,
+      "gradient_clip_norm": 1.0
+    },
+    "schedule": {
+      "name": "linear_warmup_then_cosine",
+      "warmup_epochs": 5,
+      "minimum_learning_rate": 0.000001,
+      "same_for_every_deep_model": true
+    },
+    "checkpoint": {
+      "monitor": "validation_average_precision",
+      "mode": "max",
+      "patience_epochs": 10,
+      "minimum_delta": 0.0001,
+      "ties": "retain earliest epoch",
+      "test_data_used": false
+    },
+    "augmentation": {
+      "horizontal_flip_probability": 0.5,
+      "vertical_flip_probability": 0.5,
+      "features_labels_and_loss_mask_transform_together": true
+    },
+    "determinism": {
+      "numpy_torch_and_cuda_seeded": true,
+      "dataloader_workers": 0,
+      "dataloader_shuffle": false,
+      "torch_deterministic_algorithms": true,
+      "cudnn_benchmark": false,
+      "allow_tf32": false,
+      "automatic_mixed_precision": false
+    },
+    "primary_test_time_augmentation": false
+  },
+  "random_forest_training": {
+    "training_pixels": "all eligible train.npy pixels; no class downsampling",
+    "n_estimators": 500,
+    "min_samples_leaf": 5,
+    "max_features": "sqrt",
+    "bootstrap": true,
+    "class_weight": "balanced_subsample",
+    "n_jobs": 16,
+    "random_state": "run seed",
+    "validation_use": "diagnostic metrics only; no hyperparameter selection"
+  },
+  "evaluation": {
+    "checkpoint_metric": "validation average precision",
+    "primary_test_metric": "average precision",
+    "secondary_test_metrics": [
+      "ROC AUC",
+      "precision at top 1 percent",
+      "recall at top 1 percent",
+      "precision at top 5 percent",
+      "recall at top 5 percent",
+      "F1 at fixed 0.5",
+      "precision at fixed 0.5",
+      "recall at fixed 0.5"
+    ],
+    "pr_curve_saved": true,
+    "test_threshold_tuning": false,
+    "validation_selected_threshold": "may be reported separately as descriptive and never replaces fixed-threshold test metrics",
+    "seed_ensemble": "arithmetic mean of four seed probability maps within each model and fold",
+    "primary_model_summary": "equal-weight mean and standard deviation of four fold-level seed-ensemble AP values",
+    "supplementary_summary": "pooled out-of-fold predictions and all 16 individual fold-seed results",
+    "uncertainty": "report fold and seed dispersion; no pixelwise bootstrap confidence interval",
+    "model_ranking_boundary": "only primary_capacity_matched models support direct architecture attribution"
+  },
+  "run_matrix": {
+    "deep_runs": 96,
+    "random_forest_runs": 32,
+    "total_runs": 128,
+    "required_completion": "all configured model x fold x seed cells before aggregate comparison"
+  },
+  "failure_policy": {
+    "transient_system_failure": "retry the identical model, fold, seed, config, and code hash; retain every attempt record",
+    "nan_or_nonfinite_loss": "mark failed and stop the affected protocol batch for review; do not change one run silently",
+    "out_of_memory": "stop and revise the common protocol for every affected deep model; do not use a one-off batch size",
+    "failed_seed_replacement": "prohibited",
+    "early_stopping": "a valid completed run, not a failure",
+    "incomplete_matrix": "report incomplete; do not compute a final model ranking"
+  },
+  "output_schema": {
+    "root": "01_data/interim/results_v3/<protocol_sha256>",
+    "run_directory": "<model_id>/<fold_id>/seed_<seed>",
+    "required_run_files": [
+      "config_snapshot.json",
+      "environment.json",
+      "history.csv",
+      "result.json",
+      "validation_probability.npy",
+      "test_probability.npy",
+      "pr_curve.npz",
+      "run_manifest.json"
+    ],
+    "deep_only_files": [
+      "checkpoint.pt"
+    ],
+    "random_forest_only_files": [
+      "model.joblib"
+    ],
+    "hashes": "SHA-256 for config, code, masks, normalization, checkpoint/model, probability arrays, and result files",
+    "logs": "99_logs/experiment_v3/<protocol_sha256>"
+  },
+  "change_control": {
+    "test_driven_protocol_change": "prohibited",
+    "protocol_change_after_any_test_evaluation": "create a new protocol version and rerun every affected comparison cell",
+    "mixing_results_across_protocol_hashes": "prohibited",
+    "cherry_picking_seed_fold_or_epoch": "prohibited"
+  }
+}

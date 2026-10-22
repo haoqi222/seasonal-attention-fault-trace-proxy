@@ -1,0 +1,38 @@
+{
+  "schema_version": "fault-proxy-random-holdout-diagnostic-v1.1-inference",
+  "status": "frozen_before_v1_1_inference",
+  "purpose": "Evaluation-only re-inference of all accepted V1 random-holdout checkpoints with the exact V4.2 raised-cosine floor for a matched spatial-versus-random comparison.",
+  "parent_random_training_protocol_sha256": "6391a2680c2173f0deda638f2b8c317d1d681def25b73e7da9df9ccf92148627",
+  "parent_cells": 48,
+  "models": ["unet_matched", "temporal_attn", "temporal_concat"],
+  "splits": ["R1_MatchedF1", "R2_MatchedF2", "R3_MatchedF3", "R4_MatchedF4"],
+  "seeds": [0, 1, 2, 3],
+  "change_scope": {
+    "training": "unchanged; reuse the exact accepted V1 checkpoints",
+    "data_labels_masks_normalization": "unchanged",
+    "architecture_and_checkpoint_selection": "unchanged",
+    "window_size_pixels": 128,
+    "stride_pixels": 64,
+    "window_batch_size": 16,
+    "test_time_augmentation": false,
+    "changed_component": "raised-cosine positive floor only: 0.05 to 0.01"
+  },
+  "blend": {
+    "axis_formula": "w[i] = 0.01 + 0.99 * sin(pi*(i+0.5)/128)^2",
+    "two_dimensional_weight": "outer(w, w)",
+    "floor": 0.01,
+    "matched_spatial_protocol_sha256": "43315ba42f2686b339644e0e89afd964bab32ef4647aa9189bfd4eea96118b1b",
+    "selection_basis": "exact parity with the already frozen V4.2 spatial comparator; no V1.1 result or label metric selected the value"
+  },
+  "evaluation": {
+    "metrics": "identical to V1 and V4.2",
+    "seed_ensemble": "arithmetic mean of four V1.1 probability maps",
+    "all_cells_required": true
+  },
+  "output": {
+    "root": "01_data/interim/results_random_holdout_v1_1/<protocol_sha256>",
+    "logs": "99_logs/random_holdout_v1_1/<protocol_sha256>",
+    "overwrite": "prohibited"
+  },
+  "interpretation": "V1.1 supersedes V1 probability maps for final spatial-versus-random reporting; V1 training checkpoints and histories remain the training evidence."
+}

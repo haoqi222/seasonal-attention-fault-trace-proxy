@@ -1,0 +1,22 @@
+{
+  "status": "rejected",
+  "checks_passed": 792,
+  "checks_total": 793,
+  "failures": [
+    {
+      "name": "formal_test_severe_cases_halved",
+      "passed": false,
+      "count": 37,
+      "maximum": 0.5049304092235207
+    }
+  ],
+  "test_seam_audit": {
+    "status": "rejected",
+    "deep_model_fold_orientation_records": 48,
+    "v3_uniform_mean_seam_ratio": 3.0180056105006834,
+    "v4_weighted_mean_seam_ratio": 1.0316688634675122,
+    "v4_weighted_max_seam_ratio": 1.1680978483063387,
+    "severe_v3_records": 37,
+    "severe_v4_over_v3_maximum": 0.5049304092235207
+  }
+}

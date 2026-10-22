@@ -1,0 +1,106 @@
+{
+  "status": "completed",
+  "protocol_sha256": "0495013f9aea36a7d56f78314aa8dc6a41b1c8651cc584e62ad14086f6875bcf",
+  "fold_count": 4,
+  "model_count": 2,
+  "test_summary_by_fold": [
+    {
+      "fold_id": "F1_NorthTest",
+      "coordinate_linear": {
+        "n": 161184,
+        "positive": 23629,
+        "prevalence": 0.14659643637085568,
+        "average_precision": 0.18604472392405913,
+        "roc_auc": 0.6720615287678149,
+        "precision_at_0_5": 0.13279941084414987,
+        "recall_at_0_5": 0.30526048499724917,
+        "f1_at_0_5": 0.18508159704403163
+      },
+      "coordinate_polynomial_degree2": {
+        "n": 161184,
+        "positive": 23629,
+        "prevalence": 0.14659643637085568,
+        "average_precision": 0.12893894453504812,
+        "roc_auc": 0.4905995957873992,
+        "precision_at_0_5": 0.0,
+        "recall_at_0_5": 0.0,
+        "f1_at_0_5": 0.0
+      }
+    },
+    {
+      "fold_id": "F2_NorthCentralTest",
+      "coordinate_linear": {
+        "n": 125574,
+        "positive": 15815,
+        "prevalence": 0.12594167582461338,
+        "average_precision": 0.17436340575593534,
+        "roc_auc": 0.6243108652870508,
+        "precision_at_0_5": 0.15940790477643826,
+        "recall_at_0_5": 0.3302560859943092,
+        "f1_at_0_5": 0.21502675998353232
+      },
+      "coordinate_polynomial_degree2": {
+        "n": 125574,
+        "positive": 15815,
+        "prevalence": 0.12594167582461338,
+        "average_precision": 0.2772080493128418,
+        "roc_auc": 0.6303755265354929,
+        "precision_at_0_5": 0.0,
+        "recall_at_0_5": 0.0,
+        "f1_at_0_5": 0.0
+      }
+    },
+    {
+      "fold_id": "F3_SouthCentralTest",
+      "coordinate_linear": {
+        "n": 134282,
+        "positive": 13287,
+        "prevalence": 0.09894848155374511,
+        "average_precision": 0.10417457364754955,
+        "roc_auc": 0.5427812767180739,
+        "precision_at_0_5": 0.10105676055792828,
+        "recall_at_0_5": 0.5894483329570257,
+        "f1_at_0_5": 0.17253381504163545
+      },
+      "coordinate_polynomial_degree2": {
+        "n": 134282,
+        "positive": 13287,
+        "prevalence": 0.09894848155374511,
+        "average_precision": 0.10016952040992183,
+        "roc_auc": 0.5498367741576096,
+        "precision_at_0_5": 0.11102445249975627,
+        "recall_at_0_5": 0.9428012342891549,
+        "f1_at_0_5": 0.1986552276439525
+      }
+    },
+    {
+      "fold_id": "F4_SouthTest",
+      "coordinate_linear": {
+        "n": 275591,
+        "positive": 7407,
+        "prevalence": 0.026876784800664754,
+        "average_precision": 0.01872245903943581,
+        "roc_auc": 0.33114982140844995,
+        "precision_at_0_5": 0.010986904028725148,
+        "recall_at_0_5": 0.2552990414472796,
+        "f1_at_0_5": 0.02106717319979278
+      },
+      "coordinate_polynomial_degree2": {
+        "n": 275591,
+        "positive": 7407,
+        "prevalence": 0.026876784800664754,
+        "average_precision": 0.036582474369957,
+        "roc_auc": 0.6550626822001685,
+        "precision_at_0_5": 0.0,
+        "recall_at_0_5": 0.0,
+        "f1_at_0_5": 0.0
+      }
+    }
+  ],
+  "interpretation_boundaries": [
+    "Coordinates are a spatial-structure negative control, not remote-sensing evidence.",
+    "The four folds are subregions of one corridor and are not independent geographic replicates.",
+    "A coordinate baseline cannot establish or reject geological signal by itself.",
+    "No concealed-fault, new-fault, or environmental causal claim is permitted."
+  ]
+}

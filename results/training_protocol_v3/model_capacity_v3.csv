@@ -1,0 +1,7 @@
+﻿model_id,analysis_tier,input,trainable_parameters,parameters_M,forward_shape,forward_finite
+unet_matched,primary_capacity_matched,all 32 channels,487617,0.487617000,1x1x128x128,True
+temporal_attn,primary_capacity_matched,four seasons and all eight variables,638401,0.638401000,1x1x128x128,True
+temporal_concat,primary_capacity_matched,four seasons and all eight variables,571921,0.571921000,1x1x128x128,True
+summer_only,secondary_input_ablation,summer and all eight variables,573121,0.573121000,1x1x128x128,True
+thermal_only,secondary_input_ablation,four seasons and ST only,637393,0.637393000,1x1x128x128,True
+optical_only,secondary_input_ablation,four seasons and seven non-ST variables,638257,0.638257000,1x1x128x128,True

@@ -1,0 +1,29 @@
+{
+  "source_files": {
+    "protocol": {
+      "path": "03_configs/experiment_v3_protocol.json",
+      "sha256_before": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+      "sha256_after": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+      "unchanged": true
+    },
+    "stage5_lock": {
+      "path": "04_results/training_protocol_v3/protocol_lock_v3.json",
+      "sha256_before": "08136c558b6d3d73f1608ccee41bd28217a40a65a8e8d24f68ef18f395556a17",
+      "sha256_after": "08136c558b6d3d73f1608ccee41bd28217a40a65a8e8d24f68ef18f395556a17",
+      "unchanged": true
+    },
+    "runner": {
+      "path": "02_scripts/modeling/13_run_experiment_v3.py",
+      "sha256_before": "13f2a2e1fd39affd38e3ab8fb93db1b42b85bdccdf61a58597624d47f1f094be",
+      "sha256_after": "13f2a2e1fd39affd38e3ab8fb93db1b42b85bdccdf61a58597624d47f1f094be",
+      "unchanged": true
+    },
+    "scheduler": {
+      "path": "02_scripts/modeling/14_schedule_experiments_v3.py",
+      "sha256_before": "94945580882aee20915506acf02d05e1dcd7d5d2e607f0fc0dc070498fd329ed",
+      "sha256_after": "94945580882aee20915506acf02d05e1dcd7d5d2e607f0fc0dc070498fd329ed",
+      "unchanged": true
+    }
+  },
+  "all_sources_unchanged": true
+}

@@ -1,0 +1,7 @@
+﻿comparison_id,interpretation_boundary,left_model,right_model,folds,mean_ap_difference_left_minus_right,sd_ap_difference,left_wins,ties,right_wins
+temporal_attn_vs_unet,primary_architecture,temporal_attn,unet_matched,4,0.01658396956494435,0.03932288646486696,3,0,1
+temporal_attn_vs_concat,primary_architecture,temporal_attn,temporal_concat,4,0.007950319340130274,0.019788413337663287,1,0,3
+temporal_attn_vs_summer,input_ablation,temporal_attn,summer_only,4,0.03386356101139055,0.034941135113036925,4,0,0
+temporal_attn_vs_thermal,input_ablation,temporal_attn,thermal_only,4,0.08430031616488211,0.17079462570630205,2,0,2
+temporal_attn_vs_optical,input_ablation,temporal_attn,optical_only,4,0.034417564492499136,0.050065050166346194,3,0,1
+rf_context_vs_direct,context_sensitivity,rf_context,rf_direct,4,0.021392069966167233,0.026787081434468635,3,0,1

@@ -1,0 +1,145 @@
+{
+  "overall_accepted": true,
+  "status": "accepted_for_training_loader_integration",
+  "next_gate": "Integrate fold-specific masks and normalization into a V3 loader and verify patch containment and inference coverage before any model training.",
+  "checks": [
+    {
+      "fold": "global",
+      "check": "stage2_acceptance_is_clean",
+      "passed": true
+    },
+    {
+      "fold": "global",
+      "check": "X_hash_matches_stage2",
+      "passed": true,
+      "sha256": "f13736ac44457daa39c541d29e15b0f48ccb8448f6b11981d749c6778e7e3f27"
+    },
+    {
+      "fold": "global",
+      "check": "channel_metadata_matches_X",
+      "passed": true,
+      "channels": 32
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "train_mask_exactly_matches_partition_valid_label",
+      "passed": true
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "train_validation_test_masks_disjoint",
+      "passed": true
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "training_sample_count_matches_manifest",
+      "passed": true,
+      "actual": 249234,
+      "expected": 249234
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "all_selected_feature_values_finite",
+      "passed": true,
+      "sample_count_per_channel": 249234
+    },
+    {
+      "fold": "F1_NorthTest",
+      "check": "all_channel_statistics_finite_and_nonconstant",
+      "passed": true,
+      "minimum_std": 0.03589963438099293
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "train_mask_exactly_matches_partition_valid_label",
+      "passed": true
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "train_validation_test_masks_disjoint",
+      "passed": true
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "training_sample_count_matches_manifest",
+      "passed": true,
+      "actual": 279288,
+      "expected": 279288
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "all_selected_feature_values_finite",
+      "passed": true,
+      "sample_count_per_channel": 279288
+    },
+    {
+      "fold": "F2_NorthCentralTest",
+      "check": "all_channel_statistics_finite_and_nonconstant",
+      "passed": true,
+      "minimum_std": 0.044265571858098755
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "train_mask_exactly_matches_partition_valid_label",
+      "passed": true
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "train_validation_test_masks_disjoint",
+      "passed": true
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "training_sample_count_matches_manifest",
+      "passed": true,
+      "actual": 386980,
+      "expected": 386980
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "all_selected_feature_values_finite",
+      "passed": true,
+      "sample_count_per_channel": 386980
+    },
+    {
+      "fold": "F3_SouthCentralTest",
+      "check": "all_channel_statistics_finite_and_nonconstant",
+      "passed": true,
+      "minimum_std": 0.03480235652797406
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "train_mask_exactly_matches_partition_valid_label",
+      "passed": true
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "train_validation_test_masks_disjoint",
+      "passed": true
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "training_sample_count_matches_manifest",
+      "passed": true,
+      "actual": 249234,
+      "expected": 249234
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "all_selected_feature_values_finite",
+      "passed": true,
+      "sample_count_per_channel": 249234
+    },
+    {
+      "fold": "F4_SouthTest",
+      "check": "all_channel_statistics_finite_and_nonconstant",
+      "passed": true,
+      "minimum_std": 0.03589963438099293
+    },
+    {
+      "fold": "global",
+      "check": "all_source_files_unchanged_during_stage3",
+      "passed": true
+    }
+  ]
+}

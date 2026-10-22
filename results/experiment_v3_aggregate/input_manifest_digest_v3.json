@@ -1,0 +1,33 @@
+{
+  "protocol_sha256": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+  "run_manifests": 128,
+  "ordered_manifest_digest_sha256": "7d8a094fb7b13542c9977574597158cdcf9bef9859cd6513413d1ec8c346bf49",
+  "scheduler_execution_summary_sha256": "655a31277066cc2d22b24a56310a2e70bd8d7b380dc09b8c23961cfbf1b444bb",
+  "total_input_bytes": 15430204664,
+  "aggregation_source_sha256": {
+    "aggregation_script": "72b15ba08e98efbac6033d06fea2ef90eecd1f614f174748bd1fcc7b368045c9",
+    "formal_runner": "13f2a2e1fd39affd38e3ab8fb93db1b42b85bdccdf61a58597624d47f1f094be",
+    "scheduler": "94945580882aee20915506acf02d05e1dcd7d5d2e607f0fc0dc070498fd329ed",
+    "dataset_loader": "fc2b38fe371dd1f0e05a733397c8ded6653374e2bba314c8178d9106d4c371b2",
+    "protocol": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+    "scheduler_execution_summary": "655a31277066cc2d22b24a56310a2e70bd8d7b380dc09b8c23961cfbf1b444bb"
+  },
+  "fold_input_sha256": {
+    "F1_NorthTest/y.npy": "6ea4c1d0060458b5e20fb3bb38ce83ba8f006c515393eea133d66f89407cf54b",
+    "F1_NorthTest/partition.npy": "f887b88e70b3fd324e8cc35ec723d5860a366c741a0f1bd9fac7ce8394e33d66",
+    "F1_NorthTest/val.npy": "60516e40d6f90a5883c8fbaf41b42d36dedd218d868846232c27b0886537e244",
+    "F1_NorthTest/test.npy": "d672dd2f23e246922a9d5bdf9814aa4e6f4f293e04bd9e4e066248c273b17cb9",
+    "F2_NorthCentralTest/y.npy": "80288ecb8eb9232560e57ed7f3e9200ea0513426f9e8eadb233ae0c6f2755a64",
+    "F2_NorthCentralTest/partition.npy": "4b075804e7f85b8274f0ff10739f9afc13166714cc19855604f491253705bae5",
+    "F2_NorthCentralTest/val.npy": "60516e40d6f90a5883c8fbaf41b42d36dedd218d868846232c27b0886537e244",
+    "F2_NorthCentralTest/test.npy": "d6412c073343cc705c8e993a37e534525e5547b9f7397d2c72ca6bc9f146c227",
+    "F3_SouthCentralTest/y.npy": "f3726b745f8c2ea0448ba17ddf619335283a9e3e0f47edb7553dd4e418a93f83",
+    "F3_SouthCentralTest/partition.npy": "18bcde27f93fbc3c4acb775ea7657fdf2019f0114e2b0133affae4f0f27c0f08",
+    "F3_SouthCentralTest/val.npy": "c9993a14869618177f7b6e14167936a9ebef7d872405883dd4857ac5f83e7b82",
+    "F3_SouthCentralTest/test.npy": "b0d70cb2111336a85ac4e20048a40189e1512c180f9e3ccfde2116ff5eb2a97e",
+    "F4_SouthTest/y.npy": "6ea4c1d0060458b5e20fb3bb38ce83ba8f006c515393eea133d66f89407cf54b",
+    "F4_SouthTest/partition.npy": "fa0e6e1eabeabeee4757e7954a416c3f046b9d0b04a86a5d3044f347f1a942b9",
+    "F4_SouthTest/val.npy": "d672dd2f23e246922a9d5bdf9814aa4e6f4f293e04bd9e4e066248c273b17cb9",
+    "F4_SouthTest/test.npy": "60516e40d6f90a5883c8fbaf41b42d36dedd218d868846232c27b0886537e244"
+  }
+}

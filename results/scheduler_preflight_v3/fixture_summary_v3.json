@@ -1,0 +1,48 @@
+{
+  "fixture_only": true,
+  "formal_root": "<workstation_project_root>/01_data/interim/scheduler_preflight_v3/7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569/results",
+  "status_counts": {
+    "pending_new": 124,
+    "retry_failed": 1,
+    "skip_completed": 1,
+    "conflict": 2
+  },
+  "safe_to_launch": false,
+  "tested_cells": [
+    {
+      "cell_id": "unet_matched__F1_NorthTest__seed_0",
+      "status": "skip_completed",
+      "attempt": 1,
+      "problems": []
+    },
+    {
+      "cell_id": "unet_matched__F1_NorthTest__seed_1",
+      "status": "retry_failed",
+      "attempt": 2,
+      "problems": []
+    },
+    {
+      "cell_id": "unet_matched__F1_NorthTest__seed_2",
+      "status": "conflict",
+      "attempt": 2,
+      "problems": [
+        "unfinished_attempt_requires_manual_review"
+      ]
+    },
+    {
+      "cell_id": "unet_matched__F1_NorthTest__seed_3",
+      "status": "conflict",
+      "attempt": 1,
+      "problems": [
+        "missing:config_snapshot.json",
+        "missing:environment.json",
+        "missing:history.csv",
+        "missing:validation_probability.npy",
+        "missing:test_probability.npy",
+        "missing:pr_curve.npz",
+        "missing:run_manifest.json",
+        "missing:checkpoint.pt"
+      ]
+    }
+  ]
+}

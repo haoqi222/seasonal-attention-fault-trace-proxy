@@ -1,0 +1,29 @@
+﻿fold_id,model_id,feature,coefficient
+F1_NorthTest,coordinate_linear,row,0.04800856295177165
+F1_NorthTest,coordinate_linear,column,0.2808541079939872
+F1_NorthTest,coordinate_polynomial_degree2,row,0.09742751829372051
+F1_NorthTest,coordinate_polynomial_degree2,column,0.24928631347869964
+F1_NorthTest,coordinate_polynomial_degree2,row^2,-0.7321129851594445
+F1_NorthTest,coordinate_polynomial_degree2,row column,-0.42880699078123746
+F1_NorthTest,coordinate_polynomial_degree2,column^2,0.4327502344387558
+F2_NorthCentralTest,coordinate_linear,row,-0.5594989107524911
+F2_NorthCentralTest,coordinate_linear,column,0.4278189371081612
+F2_NorthCentralTest,coordinate_polynomial_degree2,row,-0.4774161269207813
+F2_NorthCentralTest,coordinate_polynomial_degree2,column,0.47084658960982173
+F2_NorthCentralTest,coordinate_polynomial_degree2,row^2,1.1169949258141223
+F2_NorthCentralTest,coordinate_polynomial_degree2,row column,-1.374993172614964
+F2_NorthCentralTest,coordinate_polynomial_degree2,column^2,-1.0492005469796906
+F3_SouthCentralTest,coordinate_linear,row,-0.4146418801747879
+F3_SouthCentralTest,coordinate_linear,column,-0.36618944774265205
+F3_SouthCentralTest,coordinate_polynomial_degree2,row,-1.0936864921139346
+F3_SouthCentralTest,coordinate_polynomial_degree2,column,-0.8763345983547988
+F3_SouthCentralTest,coordinate_polynomial_degree2,row^2,-0.698010655739444
+F3_SouthCentralTest,coordinate_polynomial_degree2,row column,-0.7883702671248592
+F3_SouthCentralTest,coordinate_polynomial_degree2,column^2,0.026113021820365134
+F4_SouthTest,coordinate_linear,row,0.04800856295177165
+F4_SouthTest,coordinate_linear,column,0.2808541079939872
+F4_SouthTest,coordinate_polynomial_degree2,row,0.09742751829372051
+F4_SouthTest,coordinate_polynomial_degree2,column,0.24928631347869964
+F4_SouthTest,coordinate_polynomial_degree2,row^2,-0.7321129851594445
+F4_SouthTest,coordinate_polynomial_degree2,row column,-0.42880699078123746
+F4_SouthTest,coordinate_polynomial_degree2,column^2,0.4327502344387558

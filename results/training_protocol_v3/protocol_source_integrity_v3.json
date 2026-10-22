@@ -1,0 +1,65 @@
+{
+  "source_files": {
+    "protocol": {
+      "path": "03_configs/experiment_v3_protocol.json",
+      "sha256_before": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+      "sha256_after": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+      "unchanged": true
+    },
+    "models_v3": {
+      "path": "02_scripts/modeling/models_v3.py",
+      "sha256_before": "821206eb8bb532e7f4dc11bd8ef849e0256dbb145e2240ec8af0f220dcdaa53b",
+      "sha256_after": "821206eb8bb532e7f4dc11bd8ef849e0256dbb145e2240ec8af0f220dcdaa53b",
+      "unchanged": true
+    },
+    "temporal_cmt": {
+      "path": "02_scripts/modeling/temporal_cmt.py",
+      "sha256_before": "ceff0d18f85f63e58ea72f6ab07a67126231747813a236ac2fe9f7f6929ccfab",
+      "sha256_after": "ceff0d18f85f63e58ea72f6ab07a67126231747813a236ac2fe9f7f6929ccfab",
+      "unchanged": true
+    },
+    "cross_modal": {
+      "path": "02_scripts/modeling/cross_modal.py",
+      "sha256_before": "34b05fc7367e9451de9a0a99c21ba3d20619547f413b9ddb321e302058ab6685",
+      "sha256_after": "34b05fc7367e9451de9a0a99c21ba3d20619547f413b9ddb321e302058ab6685",
+      "unchanged": true
+    },
+    "dataset_common_v3": {
+      "path": "02_scripts/modeling/dataset_common_v3.py",
+      "sha256_before": "fc2b38fe371dd1f0e05a733397c8ded6653374e2bba314c8178d9106d4c371b2",
+      "sha256_after": "fc2b38fe371dd1f0e05a733397c8ded6653374e2bba314c8178d9106d4c371b2",
+      "unchanged": true
+    },
+    "fold_manifest": {
+      "path": "04_results/split_design_v3/fold_manifest_v3.json",
+      "sha256_before": "1f7d606ed16e327fb82f0da57d1664c09e1b9dd1092d4c6fa41e2bdb28e40d5e",
+      "sha256_after": "1f7d606ed16e327fb82f0da57d1664c09e1b9dd1092d4c6fa41e2bdb28e40d5e",
+      "unchanged": true
+    },
+    "stage2_acceptance": {
+      "path": "01_data/interim/dataset_v3/stage2_acceptance_v3.json",
+      "sha256_before": "4a937b54cbf4bf2dddb3e532c7c4c8981df9e2c4c16059b24c0672bcc142028e",
+      "sha256_after": "4a937b54cbf4bf2dddb3e532c7c4c8981df9e2c4c16059b24c0672bcc142028e",
+      "unchanged": true
+    },
+    "stage3_acceptance": {
+      "path": "01_data/interim/normalization_v3/stage3_acceptance_v3.json",
+      "sha256_before": "a76d751b447f41548757379d4be2fb3066327c4ac354f02b999e56aee59e663b",
+      "sha256_after": "a76d751b447f41548757379d4be2fb3066327c4ac354f02b999e56aee59e663b",
+      "unchanged": true
+    },
+    "stage4_acceptance": {
+      "path": "04_results/loader_audit_v3/stage4_acceptance_v3.json",
+      "sha256_before": "fae60153b7bb35c361e59acebded537f95d55584d79b1f714ae72f907f480cc7",
+      "sha256_after": "fae60153b7bb35c361e59acebded537f95d55584d79b1f714ae72f907f480cc7",
+      "unchanged": true
+    },
+    "loader_summary": {
+      "path": "04_results/loader_audit_v3/loader_audit_summary_v3.csv",
+      "sha256_before": "c7b12a6a45801fd540d771148bec7a453e1e14c6a598d4bfc84e457bc1be4dd9",
+      "sha256_after": "c7b12a6a45801fd540d771148bec7a453e1e14c6a598d4bfc84e457bc1be4dd9",
+      "unchanged": true
+    }
+  },
+  "all_sources_unchanged": true
+}

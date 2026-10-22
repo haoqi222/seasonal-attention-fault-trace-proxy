@@ -1,0 +1,19 @@
+{
+  "overall_accepted": true,
+  "status": "v4_2_weighted_inference_validated_and_aggregated",
+  "v4_protocol_sha256": "43315ba42f2686b339644e0e89afd964bab32ef4647aa9189bfd4eea96118b1b",
+  "parent_v3_protocol_sha256": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+  "deep_v4_cells": 96,
+  "rf_v3_exact_reuse_cells": 32,
+  "total_comparison_cells": 128,
+  "fold_seed_ensembles": 32,
+  "model_summaries": 8,
+  "maximum_individual_metric_recalculation_delta": 0.0,
+  "claim_boundary": [
+    "Scores rank proximity to QFFD traces coded as Inferred under a proxy label.",
+    "Outputs are not calibrated geological fault probabilities.",
+    "No concealed-fault discovery claim is permitted.",
+    "A higher mean AP does not establish stable architecture superiority without consistent fold-level differences."
+  ],
+  "next_gate": "Independently verify all aggregates and quantify V4 test-map seam ratios before release use."
+}

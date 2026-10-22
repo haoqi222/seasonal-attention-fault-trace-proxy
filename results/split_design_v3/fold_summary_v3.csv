@@ -1,0 +1,13 @@
+﻿fold_id,role,blocks,row_ranges,row_count,valid_pixels,evaluation_pixels,positive_pixels,negative_pixels,ignored_valid_pixels,positive_prevalence,raw_influence_fault_ids,allowed_fault_ids,purged_fault_ids,test_label_matches_v2,accepted
+F1_NorthTest,train,B2_NorthCentral;B3_SouthCentral,"[450,800);[850,1200)",700,355954,249234,18480,230754,106720,0.07414718698090951,18,14,4,,True
+F1_NorthTest,validation,B4_South,"[1250,1840)",590,302221,275591,7407,268184,26630,0.026876784800664754,7,7,0,,True
+F1_NorthTest,test,B1_North,"[0,400)",400,201898,161184,23629,137555,40714,0.14659643637085568,15,15,0,True,True
+F2_NorthCentralTest,train,B1_North;B3_SouthCentral,"[0,400);[850,1200)",750,380156,279288,20738,258550,100868,0.07425310074188651,28,21,7,,True
+F2_NorthCentralTest,validation,B4_South,"[1250,1840)",590,302221,275591,7407,268184,26630,0.026876784800664754,7,7,0,,True
+F2_NorthCentralTest,test,B2_NorthCentral,"[450,800)",350,177696,125574,15815,109759,52122,0.12594167582461338,8,8,0,True,True
+F3_SouthCentralTest,train,B2_NorthCentral;B4_South,"[450,800);[1250,1840)",940,479917,386980,9037,377943,92937,0.02335262804279291,15,8,7,,True
+F3_SouthCentralTest,validation,B1_North,"[0,400)",400,201898,153580,16025,137555,48318,0.10434301341320484,15,14,1,,True
+F3_SouthCentralTest,test,B3_SouthCentral,"[850,1200)",350,178258,134282,13287,120995,43976,0.09894848155374511,14,14,0,True,True
+F4_SouthTest,train,B2_NorthCentral;B3_SouthCentral,"[450,800);[850,1200)",700,355954,249234,18480,230754,106720,0.07414718698090951,18,14,4,,True
+F4_SouthTest,validation,B1_North,"[0,400)",400,201898,161184,23629,137555,40714,0.14659643637085568,15,15,0,,True
+F4_SouthTest,test,B4_South,"[1250,1840)",590,302221,275591,7407,268184,26630,0.026876784800664754,7,7,0,True,True

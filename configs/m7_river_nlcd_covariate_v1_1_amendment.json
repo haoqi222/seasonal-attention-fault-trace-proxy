@@ -1,0 +1,22 @@
+{
+  "schema_version": "fault-proxy-m7-river-nlcd-covariate-v1.1",
+  "status": "frozen_for_descriptive_audit",
+  "supersedes": "03_configs/m7_river_nlcd_covariate_v1_protocol.json",
+  "amendment_reason": "The 1.99 GB ScienceBase NLCD archive was not anonymously downloadable in the workstation environment: the manager endpoint returned a frontend shell and the public S3 object required requester-pays/authenticated access. A public ImageServer export of the same named NLCD 2021 categorical product was therefore used only for the planned descriptive covariate audit.",
+  "accepted_source": {
+    "service": "Esri Living Atlas USA Annual NLCD Land Cover ImageServer",
+    "owner_metadata": "esri_environment",
+    "url": "https://di-nlcd.img.arcgis.com/arcgis/rest/services/USA_NLCD_Annual_LandCover/ImageServer",
+    "year_filter": "Year = 2021",
+    "source_resolution_m": 30,
+    "resampling": "nearest neighbor",
+    "target_resolution_m": 100,
+    "target_crs": "EPSG:32613"
+  },
+  "boundary": "The exported raster is a traceable audit covariate, not a replacement claim that the full ScienceBase archive was downloaded. It is not used for retraining, checkpoint selection, or any geological interpretation.",
+  "change_scope": [
+    "land-cover acquisition endpoint only",
+    "no change to river source, target grid, V4.2 probabilities, folds, labels, or model metrics"
+  ],
+  "required_record": "03_configs/m7_nlcd_acquisition_record_v1.json"
+}

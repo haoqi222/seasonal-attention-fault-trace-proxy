@@ -1,0 +1,18 @@
+{
+  "status": "accepted",
+  "protocol_sha256": "43315ba42f2686b339644e0e89afd964bab32ef4647aa9189bfd4eea96118b1b",
+  "validation_only_cells": 24,
+  "test_probability_files": 0,
+  "checks_passed": 365,
+  "checks_total": 365,
+  "weighted_over_uniform_mean": 0.5969632865130338,
+  "weighted_over_uniform_maximum": 1.1247173904222474,
+  "weighted_seam_ratio_mean": 1.0538941895600782,
+  "acceptance_thresholds": {
+    "material_uniform_seam_ratio_threshold": 2.0,
+    "material_case_maximum_weighted_over_uniform": 0.5,
+    "all_case_maximum_weighted_seam_ratio": 1.5,
+    "all_case_mean_weighted_seam_ratio": 1.2
+  },
+  "failures": []
+}

@@ -1,0 +1,9 @@
+{
+  "independent_verification_passed": true,
+  "checks": 1158,
+  "failed_checks": 0,
+  "failures": [],
+  "folds": 4,
+  "channels_per_fold": 32,
+  "recomputation": "row-chunk parallel variance merge in float64"
+}

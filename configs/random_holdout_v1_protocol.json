@@ -1,0 +1,78 @@
+{
+  "schema_version": "fault-proxy-random-holdout-diagnostic-v1.0",
+  "status": "frozen_before_training",
+  "purpose": "Diagnostic comparison of naive stratified random-pixel holdout against the accepted V4.2 spatial evaluation; it is not a replacement primary evaluation.",
+  "scientific_question": "Does random pixel holdout produce materially more optimistic apparent performance than spatially blocked extrapolation when sample counts, class counts, labels, models, and training settings are held fixed?",
+  "source": {
+    "feature_cube": "01_data/interim/dataset_v2/X.npy",
+    "valid_mask": "01_data/interim/dataset_v2/valid.npy",
+    "fold_dataset": "01_data/interim/dataset_v3",
+    "fold_manifest": "04_results/split_design_v3/fold_manifest_v3.json",
+    "parent_training_protocol_sha256": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+    "spatial_comparator": "accepted V4.2 seed-ensemble outputs"
+  },
+  "splits": [
+    {"split_id": "R1_MatchedF1", "source_fold": "F1_NorthTest", "split_seed": 70601},
+    {"split_id": "R2_MatchedF2", "source_fold": "F2_NorthCentralTest", "split_seed": 70602},
+    {"split_id": "R3_MatchedF3", "source_fold": "F3_SouthCentralTest", "split_seed": 70603},
+    {"split_id": "R4_MatchedF4", "source_fold": "F4_SouthTest", "split_seed": 70604}
+  ],
+  "split_construction": {
+    "eligible_universe": "exact union of accepted train, validation, and test masks in the corresponding source spatial fold",
+    "stratification": "independent deterministic permutation within y=0 and y=1",
+    "allocation": "exactly match the source fold train, validation, and test counts separately for each class",
+    "ignored_and_gap_pixels": "remain excluded",
+    "overlap": "prohibited",
+    "normalization": "channel mean and population standard deviation fitted only on the randomized training mask"
+  },
+  "models": ["unet_matched", "temporal_attn", "temporal_concat"],
+  "seeds": [0, 1, 2, 3],
+  "training": {
+    "patch_pixels": 128,
+    "patches_per_epoch": 4096,
+    "batch_size": 16,
+    "maximum_epochs": 60,
+    "minimum_epochs_before_early_stop": 15,
+    "optimizer": {"name": "AdamW", "learning_rate": 0.0001, "weight_decay": 0.0001, "gradient_clip_norm": 1.0},
+    "schedule": {"name": "linear_warmup_then_cosine", "warmup_epochs": 5, "minimum_learning_rate": 0.000001},
+    "checkpoint": {"monitor": "validation_average_precision", "mode": "max", "patience_epochs": 10, "minimum_delta": 0.0001, "ties": "retain earliest epoch"},
+    "augmentation": {"horizontal_flip_probability": 0.5, "vertical_flip_probability": 0.5},
+    "sampler": "patch centers sampled at the natural positive prevalence among randomized training pixels that can be centers of a complete 128 by 128 grid-contained patch",
+    "loss": "BCEWithLogitsLoss with randomized-training negative/positive pixel ratio",
+    "determinism": "same deterministic settings as V3; no AMP and no TF32"
+  },
+  "inference": {
+    "coverage": "full grid by grid-contained overlapping windows",
+    "stride_pixels": 64,
+    "window_batch_size": 16,
+    "blend": "V4 separable raised-cosine positive-floor weighting",
+    "blend_floor": 0.05,
+    "test_time_augmentation": false
+  },
+  "evaluation": {
+    "checkpoint_selection": "validation AP only",
+    "test_label_access": "once after best checkpoint is fixed",
+    "primary_metric": "average precision",
+    "secondary_metrics": ["ROC AUC", "precision and recall at top 1 percent", "precision and recall at top 5 percent", "F1 precision and recall at fixed 0.5"],
+    "seed_ensemble": "arithmetic mean of four probability maps within each model and split",
+    "comparison": "pair each Rk result with the accepted spatial fold Fk; report paired differences without treating four pairs as independent geographic replicates"
+  },
+  "diagnostic_bias_boundary": {
+    "known_risk": "randomly interleaved pixels share local spatial context; validation and test feature pixels can occur inside training input patches although their labels are excluded from the loss",
+    "interpretation": "higher random-holdout performance estimates optimism under a leakage-prone evaluation design, not improved geographic transfer",
+    "prohibited_claims": ["random holdout is a valid spatial generalization estimate", "concealed fault detection", "new fault discovery", "causal environmental mechanism"]
+  },
+  "run_matrix": {"models": 3, "splits": 4, "seeds": 4, "total_runs": 48},
+  "output": {
+    "prepared_data_root": "01_data/interim/random_holdout_v1/<protocol_sha256>",
+    "formal_results_root": "01_data/interim/results_random_holdout_v1/<protocol_sha256>",
+    "logs_root": "99_logs/random_holdout_v1/<protocol_sha256>",
+    "overwrite": "prohibited"
+  },
+  "change_control": {
+    "all_48_cells_required": true,
+    "mixing_protocol_hashes": "prohibited",
+    "test_driven_changes": "require a new protocol and complete rerun",
+    "failed_seed_replacement": "prohibited"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "fault-proxy-F4-transfer-diagnostic-v1.0",
+  "status": "frozen_before_analysis",
+  "purpose": "Diagnose the shared below-random ranking on the held-out southern F4 block without converting association into a causal explanation.",
+  "fold_id": "F4_SouthTest",
+  "models": ["unet_matched", "temporal_attn", "temporal_concat"],
+  "model_seeds": [0, 1, 2, 3],
+  "v4_2_protocol_sha256": "43315ba42f2686b339644e0e89afd964bab32ef4647aa9189bfd4eea96118b1b",
+  "inputs": {
+    "features": "32 F4-training-normalized Landsat seasonal channels",
+    "labels_and_masks": "accepted fold-specific V3 F4 arrays",
+    "probabilities": "arithmetic four-seed ensembles from accepted V4.2 weighted inference"
+  },
+  "analyses": {
+    "feature_shift": "train versus test standardized mean shift and two-sample KS statistic for all 32 channels",
+    "class_association": "per-role feature ROC AUC and standardized positive-minus-negative mean contrast",
+    "association_reversal": "train and test AUC directions on opposite sides of 0.5; material when both absolute departures from 0.5 are at least 0.05",
+    "model_score_association": "test-set Spearman correlation of ensemble score with row, column, and each normalized channel",
+    "spatial_dispersion": "descriptive metrics in fixed 50-row (5 km) test blocks beginning at row 1250",
+    "coordinate_controls": [
+      "balanced linear logistic regression on standardized row and column",
+      "balanced degree-2 polynomial logistic regression on standardized row and column"
+    ]
+  },
+  "coordinate_model": {
+    "solver": "lbfgs",
+    "C": 1.0,
+    "class_weight": "balanced",
+    "max_iter": 1000,
+    "random_state": 70640,
+    "validation_role": "reported only; no hyperparameter selection"
+  },
+  "interpretation_boundaries": [
+    "KS p-values are descriptive because pixels are spatially dependent.",
+    "Twelve 5 km row blocks are descriptive spatial dispersion units, not independent geographic replicates.",
+    "Feature-association sign reversals support dataset shift but do not identify a causal environmental mechanism.",
+    "Coordinate-control performance indicates spatial confounding risk but does not partition causal effects.",
+    "No concealed-fault or new-fault claim is permitted."
+  ],
+  "output": "04_results/f4_transfer_diagnostic_v1",
+  "overwrite": "prohibited"
+}

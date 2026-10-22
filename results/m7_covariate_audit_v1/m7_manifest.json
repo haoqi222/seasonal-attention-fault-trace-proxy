@@ -1,0 +1,68 @@
+{
+  "status": "descriptive_audit_complete",
+  "scope": "no retraining; no checkpoint selection; no geological probability interpretation",
+  "m7_protocol_amendment": "03_configs/m7_river_nlcd_covariate_v1_1_amendment.json",
+  "v4_protocol_sha256": "43315ba42f2686b339644e0e89afd964bab32ef4647aa9189bfd4eea96118b1b",
+  "v3_protocol_sha256_for_rf": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+  "shape": [
+    1840,
+    539
+  ],
+  "crs": "EPSG:32613",
+  "nlcd_transform": [
+    100.0,
+    0.0,
+    305300.0,
+    0.0,
+    -100.0,
+    3913900.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "sources": {
+    "01_data/external/nhdplus_hr_rio_grande.geojson": "f35d3ce78556f0b6341bfca19d062aa72950e2936b86a6621aee72f9c974a27e",
+    "01_data/external/nlcd_2021/nlcd_2021_100m_epsg32613.tif": "4ed4a60d9f25ba0dffcdeb0bba3941fa5f4f513ba3610a3e20114e48364a6434",
+    "01_data/interim/m7_covariates_v1/distance_rio_grande_m.tif": "e2b3e32ca7601c2d49d2e40acd33049e714bd0d93facde73561550e7a00922b1"
+  },
+  "models": {
+    "unet_matched": [
+      "v4",
+      "primary_capacity_matched"
+    ],
+    "temporal_attn": [
+      "v4",
+      "primary_capacity_matched"
+    ],
+    "temporal_concat": [
+      "v4",
+      "primary_capacity_matched"
+    ],
+    "rf_direct": [
+      "v3",
+      "primary_nonneural_baseline"
+    ],
+    "rf_context": [
+      "v3",
+      "secondary_context_sensitivity"
+    ],
+    "summer_only": [
+      "v4",
+      "secondary_input_ablation"
+    ],
+    "thermal_only": [
+      "v4",
+      "secondary_input_ablation"
+    ],
+    "optical_only": [
+      "v4",
+      "secondary_input_ablation"
+    ]
+  },
+  "folds": [
+    "F1_NorthTest",
+    "F2_NorthCentralTest",
+    "F3_SouthCentralTest",
+    "F4_SouthTest"
+  ]
+}

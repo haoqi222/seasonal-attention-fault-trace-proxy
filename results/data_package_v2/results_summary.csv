@@ -1,0 +1,8 @@
+﻿design,n_seeds,auc_mean,auc_sd,ap_mean,ap_sd,f1_mean_at_0.5,f1_sd_at_0.5,ensemble_auc,ensemble_ap,ensemble_f1_at_0.5,interpretation
+U-Net (ResNet-18 encoder),4,0.614516,0.021260,0.032973,0.001921,0.059831,0.014936,0.635061,0.034211,0.055074,above chance
+Random forest,4,0.567880,0.002084,0.028415,0.000109,0.030819,0.000777,0.568733,0.028432,0.029785,above chance
+"Temporal-attention, four seasons, all bands",4,0.528223,0.078841,0.028605,0.005750,0.057185,0.014195,0.552864,0.028793,0.055446,above chance
+"Season concatenation, four seasons, all bands",4,0.525316,0.101429,0.029136,0.008045,0.057491,0.014388,0.540249,0.026468,0.061000,above chance
+"Temporal-attention, summer only, all bands",4,0.467680,0.042035,0.025068,0.004116,0.033958,0.014163,0.449463,0.022578,0.038942,not above chance
+"Temporal-attention, four seasons, thermal only",4,0.445723,0.063541,0.022346,0.002789,0.036970,0.013401,0.440853,0.021636,0.028998,not above chance
+"Temporal-attention, four seasons, optical only",4,0.397421,0.045665,0.020287,0.001542,0.032200,0.010620,0.380026,0.019537,0.030896,not above chance

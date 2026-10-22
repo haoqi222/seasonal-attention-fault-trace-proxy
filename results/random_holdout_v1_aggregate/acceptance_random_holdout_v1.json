@@ -1,0 +1,18 @@
+{
+  "status": "accepted",
+  "protocol_sha256": "6391a2680c2173f0deda638f2b8c317d1d681def25b73e7da9df9ccf92148627",
+  "formal_cells": 48,
+  "validated_cells": 48,
+  "failed_cells": 0,
+  "seed_ensembles": 12,
+  "maximum_metric_recalculation_delta": 0.0,
+  "spatial_comparator": {
+    "status": "frozen_v4_2_with_disclosed_seam_exception",
+    "aggregate_accepted": true,
+    "independent_checks_passed": 792,
+    "independent_checks_total": 793,
+    "exception": "one of 37 severe V3 seam records improved by 49.51%, narrowly below the 50% target"
+  },
+  "interpretation": "Random-pixel results are leakage-prone diagnostics and not spatial generalization estimates.",
+  "next_gate": "Independent recomputation of ensembles, paired differences, and all aggregate checksums."
+}

@@ -1,0 +1,10 @@
+{
+  "independent_verification_passed": true,
+  "checks": 99,
+  "failed_checks": 0,
+  "failures": [],
+  "planned_runs": 128,
+  "protocol_sha256": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+  "formal_training_started": false,
+  "formal_results_present": false
+}

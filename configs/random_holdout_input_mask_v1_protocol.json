@@ -1,0 +1,34 @@
+{
+  "schema_version": "fault-proxy-random-holdout-input-mask-v1.0",
+  "status": "frozen_before_inference",
+  "purpose": "Separate the contribution of direct test-pixel access from neighborhood geometry in the accepted random-pixel diagnostic.",
+  "parent_inference_protocol_sha256": "9d61b6bde10443960cb1c2647641c30bc47e03369115bd1b8c9a8364290e99a0",
+  "models": ["unet_matched", "temporal_attn", "temporal_concat"],
+  "splits": ["R1_MatchedF1", "R2_MatchedF2", "R3_MatchedF3", "R4_MatchedF4"],
+  "seeds": [0, 1, 2, 3],
+  "masking": {
+    "mask_source": "the exact randomized test mask for the current split",
+    "mask_scope": "before every inference window is forwarded, every test-mask pixel in that window is replaced by normalized zero (the training-set channel mean)",
+    "labels_and_loss_masks": "unchanged; this is inference-only",
+    "neighboring_test_pixels": "all are masked simultaneously, so the diagnostic removes direct test-pixel values but retains unmasked neighboring training and validation pixels",
+    "evaluation_scope": "test-mask pixels only",
+    "checkpoint_and_architecture": "reuse the exact accepted V1 checkpoints and V1.1 inference settings"
+  },
+  "comparison": {
+    "baseline": "the corresponding unmasked V1.1 probability and result for the same model, split, and seed",
+    "primary_metric": "average precision",
+    "secondary_metrics": ["ROC AUC", "precision and recall at top 1 percent", "precision and recall at top 5 percent", "F1 precision and recall at fixed 0.5"],
+    "interpretation": "a drop after input masking is evidence that direct pixel access contributed to the random-holdout score; it does not isolate all spatial-context leakage"
+  },
+  "prohibited_claims": ["masked inference proves the model learned geology", "masked inference is a spatial generalization estimate", "the diagnostic discovers concealed or new faults"],
+  "run_matrix": {"models": 3, "splits": 4, "seeds": 4, "total_runs": 48},
+  "output": {
+    "root": "04_results/random_holdout_input_mask_v1/<protocol_sha256>",
+    "overwrite": "prohibited"
+  },
+  "change_control": {
+    "all_48_cells_required": true,
+    "mixing_protocol_hashes": "prohibited",
+    "failed_seed_replacement": "prohibited"
+  }
+}

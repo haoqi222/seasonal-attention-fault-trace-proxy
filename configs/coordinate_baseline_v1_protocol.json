@@ -1,0 +1,40 @@
+{
+  "schema_version": "fault-proxy-coordinate-baseline-v1.0",
+  "status": "frozen_before_analysis",
+  "purpose": "Complete the coordinate-only negative control for all four accepted spatial folds.",
+  "scientific_question": "How much of fold-level proxy ranking can be reproduced from row and column coordinates alone under training-only standardization?",
+  "source": {
+    "fold_dataset": "01_data/interim/dataset_v3",
+    "fold_manifest": "04_results/split_design_v3/fold_manifest_v3.json",
+    "accepted_spatial_protocol_sha256": "43315ba42f2686b339644e0e89afd964bab32ef4647aa9189bfd4eea96118b1b"
+  },
+  "folds": ["F1_NorthTest", "F2_NorthCentralTest", "F3_SouthCentralTest", "F4_SouthTest"],
+  "models": ["coordinate_linear", "coordinate_polynomial_degree2"],
+  "features": {
+    "raw": ["row_index", "column_index"],
+    "standardization": "fit mean and population standard deviation on training-role coordinates only",
+    "polynomial": "sklearn PolynomialFeatures(degree=2, include_bias=false) applied after training-only standardization"
+  },
+  "model": {
+    "name": "sklearn.linear_model.LogisticRegression",
+    "solver": "lbfgs",
+    "C": 1.0,
+    "class_weight": "balanced",
+    "max_iter": 1000,
+    "random_state": 70640,
+    "validation_role": "reported_only; no hyperparameter selection"
+  },
+  "evaluation": {
+    "metrics": ["average_precision", "roc_auc", "precision", "recall", "f1"],
+    "roles": ["train", "validation", "test"],
+    "test_interpretation": "descriptive negative control; not an operational predictor and not a causal decomposition"
+  },
+  "interpretation_boundaries": [
+    "Coordinates are a spatial-structure negative control, not remote-sensing evidence.",
+    "The four folds are subregions of one corridor and are not independent geographic replicates.",
+    "A coordinate baseline cannot establish or reject geological signal by itself.",
+    "No concealed-fault, new-fault, or environmental causal claim is permitted."
+  ],
+  "output": "04_results/coordinate_baseline_v1",
+  "overwrite": "prohibited"
+}

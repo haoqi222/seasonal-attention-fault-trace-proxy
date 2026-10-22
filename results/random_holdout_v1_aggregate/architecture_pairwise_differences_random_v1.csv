@@ -1,0 +1,9 @@
+﻿comparison_id,split_id,left_model,right_model,left_test_ap,right_test_ap,ap_difference_left_minus_right
+temporal_attn_vs_unet,R1_MatchedF1,temporal_attn,unet_matched,0.9997951663082776,0.9999621063204768,-0.0001669400121991904
+temporal_attn_vs_unet,R2_MatchedF2,temporal_attn,unet_matched,0.9993264803649572,0.999942083844245,-0.0006156034792877962
+temporal_attn_vs_unet,R3_MatchedF3,temporal_attn,unet_matched,0.9992046129739282,0.9997551951961897,-0.0005505822222615642
+temporal_attn_vs_unet,R4_MatchedF4,temporal_attn,unet_matched,0.9990283640817303,0.9995829107341978,-0.000554546652467458
+temporal_attn_vs_concat,R1_MatchedF1,temporal_attn,temporal_concat,0.9997951663082776,0.9998461477157772,-5.098140749959512e-05
+temporal_attn_vs_concat,R2_MatchedF2,temporal_attn,temporal_concat,0.9993264803649572,0.9997597285176523,-0.000433248152695076
+temporal_attn_vs_concat,R3_MatchedF3,temporal_attn,temporal_concat,0.9992046129739282,0.9998275292612808,-0.0006229162873526706
+temporal_attn_vs_concat,R4_MatchedF4,temporal_attn,temporal_concat,0.9990283640817303,0.9992173303896372,-0.0001889663079068793

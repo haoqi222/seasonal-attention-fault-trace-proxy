@@ -1,0 +1,69 @@
+{
+  "schema_version": "fault-proxy-v4-inference-protocol-1.0",
+  "status": "frozen_before_v4_inference",
+  "purpose": "Replace uniform sliding-window averaging with a fixed center-weighted blend to address verified stride-aligned prediction seams without retraining.",
+  "parent_v3": {
+    "training_protocol_sha256": "7e9844b006fc6024cd02b332a23576eb9e070492e113f514561fdebd67a58569",
+    "ordered_run_manifest_digest": "7d8a094fb7b13542c9977574597158cdcf9bef9859cd6513413d1ec8c346bf49",
+    "formal_cells": 128,
+    "deep_cells": 96,
+    "random_forest_cells": 32
+  },
+  "change_scope": {
+    "training": "unchanged; use the exact accepted V3 checkpoints",
+    "data_folds_labels_normalization": "unchanged",
+    "model_architectures": "unchanged",
+    "window_size_pixels": 128,
+    "stride_pixels": 64,
+    "test_time_augmentation": false,
+    "changed_component": "overlap fusion weights only"
+  },
+  "blend": {
+    "name": "separable_raised_cosine_positive_floor",
+    "axis_formula": "w[i] = floor + (1-floor) * sin(pi*(i+0.5)/patch)^2",
+    "two_dimensional_weight": "outer(w, w)",
+    "floor": 0.05,
+    "normalization": "divide accumulated weighted probabilities by accumulated weights at each covered pixel",
+    "boundary_handling": "all role-contained windows retained; positive floor guarantees nonzero support at geographic role edges",
+    "selection_basis": "fixed from window geometry and the V3 stride-artifact diagnosis; no V4 test labels or V4 test metrics used"
+  },
+  "preflight": {
+    "roles_permitted": [
+      "validation"
+    ],
+    "cells": "seed 0 for every six deep models and four folds; 24 validation-only cells",
+    "acceptance": {
+      "all_outputs_finite_and_in_range": true,
+      "support_exactly_matches_validation_geographic_role": true,
+      "weighted_mean_stride_jump_ratio_not_above_uniform": true,
+      "weighted_over_uniform_mean_stride_jump_ratio_maximum": 0.75,
+      "test_probability_access": false,
+      "label_metric_used_for_blend_selection": false
+    }
+  },
+  "formal_matrix": {
+    "deep": "rerun validation and test inference for all 6 models x 4 folds x 4 seeds from accepted V3 checkpoints",
+    "random_forest": "reuse the exact 32 accepted V3 validation/test probability arrays because RF has no sliding-window inference",
+    "required_cells": 128,
+    "mixing_partial_v3_and_v4_deep_probabilities": "prohibited"
+  },
+  "evaluation": {
+    "metrics": "identical to V3",
+    "seed_ensemble": "arithmetic mean of four seed probability maps within each model and fold",
+    "primary_summary": "equal-weight mean and sample standard deviation of four fold-level seed-ensemble AP values",
+    "pooled_oof": "supplementary only",
+    "required_comparison": "report V4 minus V3 metric changes and whether the scientific conclusion changes"
+  },
+  "output": {
+    "preflight_root": "04_results/inference_v4_preflight/<protocol_sha256>",
+    "formal_root": "01_data/interim/results_v4/<protocol_sha256>",
+    "logs": "99_logs/inference_v4/<protocol_sha256>",
+    "overwrite": "prohibited"
+  },
+  "scientific_boundaries": [
+    "Scores rank proximity to QFFD traces coded as Inferred under a proxy label.",
+    "Outputs are not calibrated geological fault probabilities.",
+    "No concealed-fault discovery claim is permitted.",
+    "A higher mean AP does not establish stable architecture superiority without consistent fold-level differences."
+  ]
+}

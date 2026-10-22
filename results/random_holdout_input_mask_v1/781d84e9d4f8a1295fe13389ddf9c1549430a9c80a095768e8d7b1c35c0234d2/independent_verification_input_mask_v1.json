@@ -1,0 +1,8 @@
+{
+  "status": "accepted",
+  "protocol_sha256": "781d84e9d4f8a1295fe13389ddf9c1549430a9c80a095768e8d7b1c35c0234d2",
+  "cells_present": 48,
+  "checks_passed": 288,
+  "checks_total": 288,
+  "failures": []
+}
